@@ -1,0 +1,195 @@
+﻿body
+{
+	padding:0px;
+	margin:0px;
+	font-family: Arial, helvetica, sans-serif;
+	font-size: 9pt;
+
+}
+.header
+{
+	padding: 0px;
+	height: 60px;
+	margin:0px;
+	width:100%;
+}
+
+.title
+{
+	color: White;
+	text-align:center;
+	font-size: 24pt;
+	background-color: #660000;
+}
+
+.titleDescription
+{
+	color:White;
+	text-align:center;
+	font-size:10pt;
+	background-color: #660000;
+}
+
+.body
+{
+	padding:2px;
+	margin:4px;
+	width: 75%;
+	float:left;
+}
+
+.explain
+{
+	padding:2px;
+	margin:4px;
+	width:20%;
+	float:right;
+	border: solid 1px #660000;
+	color: #000066;
+	height:100%;
+	background-color: #EEEEEE;
+	-moz-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+table th
+{
+	color: White;
+	background-color: #000066;
+	text-align: center;	
+	cursor:pointer;
+}
+
+img {
+	border: none;
+}
+
+input[type=text], input[type=submit]
+{
+	width:146px;
+}
+
+select
+{
+	width:150px;
+}
+
+li label
+{
+	width:150px;
+	float:left;
+}
+
+li
+{
+	padding-left: 2px;
+	padding-bottom:5px;
+	text-align: left;
+	list-style: none;
+}
+
+.explain ul li
+{
+	list-style: disc;
+}
+
+.navigation li
+{
+	float:left;
+	width: 22%;
+	text-align:center;
+	font-weight: bold;
+	vertical-align:middle;
+}
+
+.navigation li small, .navigation li small a
+{
+	font-size: 10px;
+	text-decoration: none;
+	color: White;	
+}
+
+
+.navigation li a
+{
+	font-size: 14px;
+	text-decoration: none;
+	color: White;
+	
+}
+.navigation
+{
+	width: 100%;
+	background-color:#000066;
+	color:White;
+	-moz-border-radius-bottomleft: 12px;
+	-moz-border-radius-bottomright: 12px;
+	-webkit-border-bottom-left-radius: 12px;
+	-webkit-border-bottom-right-radius: 12px;
+}
+
+.MainUpdate
+{
+	width:375px;
+	padding:3px;
+	margin:3px;
+	float:left;
+}
+
+.MainUpdate label
+{
+	color:#888888;
+	background-color:white;
+	text-align:center;
+	font-weight:bold;
+	font-size:10pt;
+	width:375px;
+	float:left;
+}
+	
+	
+.Updates
+{
+
+	border: solid 1px #AAAAAA;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	width: 275px;
+	height: 200px;
+	margin: 3px;
+	padding: 3px;
+}
+
+.UpdatesLabel
+{
+	color:White;
+	background-color:#888888;
+	text-align:center;
+	font-weight:bold;
+	font-size:10pt;
+	width:275px;
+	float:left;
+}
+
+.left
+{
+	float:left;
+}
+
+.right
+{
+	float:right;
+}
+
+.playerName
+{
+	font-size: 20pt;
+}

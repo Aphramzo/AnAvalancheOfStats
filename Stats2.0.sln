@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Stats2.0", ".", "{C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "2.0"
+		Debug.AspNetCompiler.VirtualPath = "/Stats2.0"
+		Debug.AspNetCompiler.PhysicalPath = "..\Stats2.0\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Stats2.0\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Stats2.0"
+		Release.AspNetCompiler.PhysicalPath = "..\Stats2.0\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Stats2.0\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50514"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0}.Debug|.NET.ActiveCfg = Debug|.NET
+		{C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

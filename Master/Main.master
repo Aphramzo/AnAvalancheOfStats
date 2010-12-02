@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.master.cs" Inherits="Master_Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="Stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="Stylesheet" type="text/css" href="../css/flexigrid.css" />
+    <script src="../js/jquery-1.3.2.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="../js/flexigrid.pack.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+        <title>An Avalanche of Stats</title>
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <table class="header" border="0" cellspacing="0" cellpadding="3px">
+        <tr>
+            <td class="title">
+             An Avalanche of Stats
+            </td>
+        </tr>
+        <tr>
+            <td class="titleDescription">
+                Your one stop shop for Colorado Avalanche stats.
+            </td>
+        </tr>
+        <tr>
+            <td class="navigation">
+                <ul>
+                    <li>
+                        <a href="../Default.aspx">Home</a>
+                    </li>
+                    <li>
+                        <a href="../Seasons.aspx">Team Stats</a>
+                        <br />
+                        <small>
+                        
+                        (<a href="../Seasons.aspx">Regular Season</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="../Playoffs.aspx">Playoffs</a>)
+                        </small>
+                    </li>
+                    <li>
+                        <a href="../Players.aspx">Player Stats</a>
+                        <br />
+                        <small>
+                        (<a href="../Players.aspx">Regular Season</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../PlayerPlayoffs.aspx">Playoffs</a>)
+                        <br />
+                        (<a href="../PlayersPercent.aspx">Team % Stats</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../TimePer.aspx">TOI Per Stats</a>)
+                        </small>
+                    </li>
+                    <li>
+                        <a href="../Goalies.aspx">Goalie Stats</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <span class="body">
+        <asp:ContentPlaceHolder id="mainBody" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </span>
+    <span class="explain">
+        <asp:ContentPlaceHolder ID="explainingColumn" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </span>
+    <script type="text/javascript">
+    var sc_project=5429455; 
+    var sc_invisible=1; 
+    var sc_partition=56; 
+    var sc_click_stat=1; 
+    var sc_security="1161bc75"; 
+    </script>
+
+    <script type="text/javascript"
+    src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
+    class="statcounter"><a title="blogger counter"
+    href="http://www.statcounter.com/blogger/"
+    target="_blank"><img class="statcounter"
+    src="http://c.statcounter.com/5429455/0/1161bc75/1/"
+    alt="blogger counter" ></a></div></noscript>
+</body>
+</html>
