@@ -54,14 +54,6 @@
 	-webkit-border-radius: 5px;
 }
 
-table th
-{
-	color: White;
-	background-color: #000066;
-	text-align: center;	
-	cursor:pointer;
-}
-
 img {
 	border: none;
 }
@@ -93,41 +85,6 @@ li
 .explain ul li
 {
 	list-style: disc;
-}
-
-.navigation li
-{
-	float:left;
-	width: 22%;
-	text-align:center;
-	font-weight: bold;
-	vertical-align:middle;
-}
-
-.navigation li small, .navigation li small a
-{
-	font-size: 10px;
-	text-decoration: none;
-	color: White;	
-}
-
-
-.navigation li a
-{
-	font-size: 14px;
-	text-decoration: none;
-	color: White;
-	
-}
-.navigation
-{
-	width: 100%;
-	background-color:#000066;
-	color:White;
-	-moz-border-radius-bottomleft: 12px;
-	-moz-border-radius-bottomright: 12px;
-	-webkit-border-bottom-left-radius: 12px;
-	-webkit-border-bottom-right-radius: 12px;
 }
 
 .MainUpdate
@@ -192,4 +149,16 @@ li
 .playerName
 {
 	font-size: 20pt;
+}
+
+.AccordionNavigation
+{
+	background-color: #000066;
+	width: 200px;
+}
+
+.AccordionNavigation ul li a
+{
+	color: White;
+	text-decoration: none;
 }
