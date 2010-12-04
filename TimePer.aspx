@@ -52,7 +52,7 @@
                     <input type="checkbox" id="sum" name="sum" <%if (Request["sum"] == "on"){Response.Write("checked");}%> />         
                 </li>
                 <li>
-                    <input type="submit" value="Filter" />
+                    <input type="submit" value="Search" />
                 </li>
             </ul>
         </form>
@@ -62,7 +62,9 @@
         <asp:DataGrid ID="dgTimePer" runat="server" CssClass="dataGrid" CellPadding="2">
         </asp:DataGrid>
     </div>
-    <span style="padding:3px;background-color:#DDDDDD">Player is currently with the organization</span>
+    <%if(IsPostBack) 
+        Response.Write("<span style='padding:3px;background-color:#DDDDDD'>Player is currently with the organization</span>");
+    %>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="explainingColumn" runat="server">
         <b>Note:</b>

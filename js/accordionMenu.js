@@ -96,4 +96,7 @@ jQuery.fn.initMenu = function() {
     });
 };
 
+$(document).ready(function() {
+    $('.AccordionNavigation').height($(document).height());
+});
 $(document).ready(function() { $('.menu').initMenu(); });

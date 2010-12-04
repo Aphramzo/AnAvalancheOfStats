@@ -19,7 +19,8 @@ public partial class TimePer : System.Web.UI.Page
         scripts = new CommonPage();
         if (!IsPostBack)
             AppendDataToFilters();
-        AppendDataToGrid();
+        else
+            AppendDataToGrid();
     }
 
     private void AppendDataToGrid()

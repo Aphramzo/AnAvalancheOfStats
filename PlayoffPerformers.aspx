@@ -37,7 +37,7 @@
                     </select>
                 </li>
                 <li>
-                    <input type="submit" value="Filter" />
+                    <input type="submit" value="Search" />
                 </li>
             </ul>
         </form>
@@ -47,7 +47,9 @@
         <asp:DataGrid ID="dgPlayerSeasons" runat="server" CssClass="dataGrid" CellPadding="2">
         </asp:DataGrid>
     </div>
-    <span style="padding:3px;background-color:#DDDDDD">Player is currently with the organization</span>
+    <%if(IsPostBack) 
+        Response.Write("<span style='padding:3px;background-color:#DDDDDD'>Player is currently with the organization</span>");
+    %>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="explainingColumn" runat="server">
         <b>Columns:</b>
@@ -59,7 +61,7 @@
                 Goals per Game Difference:  The players regular season goals per game subtracted from their playoff goals per game.  All "per Game Difference" columns are calculated this way.  A negative number will represent a lower number in the playoffs than in the regular season.
             </li>
             <li>
-                Goals per Game %: The players playoff goals per game divided by their regular season goals per game.  All "per Game %" columns are calculated this way.  I number higher than 100 will represent a better performance in the playoffs than the regular season.
+                Goals per Game %: The players playoff goals per game divided by their regular season goals per game.  All "per Game %" columns are calculated this way.  If number higher than 100 will represent a better performance in the playoffs than the regular season.
             </li>
         </ul>
     

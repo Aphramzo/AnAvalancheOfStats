@@ -17,46 +17,45 @@
 <body>
     <div class="header title">
             An Avalanche of Stats
-            <p class="titleDescription">Your one stop shop for Colorado Avalanche stats.</p>     
     </div>
     <span class="AccordionNavigation left">
         <ul class="menu">
             <li>
-                <a href="../Default.aspx">Home</a>
+                <a href="../Default.aspx" class="headerMenuItem">Home</a>
             </li>
             <li>
-                <a href="#">Team Stats</a>
+                <a href="#" class="headerMenuItem">Team Stats</a>
                 <ul class="acitem">
                     <li>
-                        <a href="../Seasons.aspx">Regular Season</a>   
+                        <a href="../Seasons.aspx" class="menuItem">Regular Season</a>   
                     </li>
                     <li>
-                        <a href="../Playoffs.aspx">Playoffs</a>
+                        <a href="../Playoffs.aspx" class="menuItem">Playoffs</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="#">Player Stats</a>
+                <a href="#" class="headerMenuItem">Player Stats</a>
                 <ul class="acitem">
                     <li>
-                        <a href="../Players.aspx">Regular Season</a>   
+                        <a href="../Players.aspx" class="menuItem">Regular Season</a>   
                     </li>
                     <li>
-                        <a href="../PlayerPlayoffs.aspx">Playoffs</a>
+                        <a href="../PlayerPlayoffs.aspx" class="menuItem">Playoffs</a>
                     </li>
                     <li>
-                        <a href="../PlayersPercent.aspx">Team % Stats</a>
+                        <a href="../PlayersPercent.aspx" class="menuItem">Team % Stats</a>
                     </li>
                     <li>
-                        <a href="../TimePer.aspx">TOI Per Stats</a>
+                        <a href="../TimePer.aspx" class="menuItem">TOI Per Stats</a>
                     </li>
                     <li>
-                        <a href="../PlayoffPerformers.aspx">Playoff Heroes</a>
+                        <a href="../PlayoffPerformers.aspx" class="menuItem">Playoff Heroes</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="../Goalies.aspx">Goalie Stats</a>
+                <a href="../Goalies.aspx" class="headerMenuItem">Goalie Stats</a>
             </li>
         </ul>
     </span>
