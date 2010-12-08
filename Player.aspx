@@ -5,6 +5,7 @@
     <script src="js/Player.js" type="text/javascript"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="mainBody" runat="server">
+    <input type="hidden" id="playerId" value="<%=Request["Id"] %>" />
    <ul>
     <li class="playerName">
         <%=PlayerName() %>
@@ -24,16 +25,18 @@
    </ul>
    
    <div>
-        Regular Season:
+        Regular Season: <a href="#" id="showSeasonChart">(show chart)</a>
         <asp:DataGrid ID="dgSeasons" runat="server" CssClass="dataGrid" CellPadding="2">
         </asp:DataGrid>
     </div>
+    <span id="seasonChart"></span>
     <br />
     <div>
-        Playoffs:
+        Playoffs: <a href="#" id="showPlayoffChart">(show chart)</a>
         <asp:DataGrid ID="dgPlayoffs" runat="server" CssClass="dataGrid" CellPadding="2">
         </asp:DataGrid>
     </div>
+    <span id="playoffChart"></span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="explainingColumn" runat="server">
     <b>Columns:</b>
