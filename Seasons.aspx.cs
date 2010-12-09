@@ -40,7 +40,7 @@ public partial class Seasons : System.Web.UI.Page
                 "ProjectedPoints as [Projected Points], " + 
                 "ProjectedGoalsFor as [Projected Goals Scored], " + 
                 "ProjectedGoalsAgainst as [Projected Goals Against], " +
-                "GoalsToGoalsAgainst as [Goals to Goals Against Ratio], " + 
+                "GoalsToGoalsAgainst as [G:GA], " + 
                 "GoalsPerPoint as [Goals Scored per Point]";
 
         if (String.IsNullOrEmpty(Request["project"]) && Request["show"] == "home")
@@ -49,7 +49,9 @@ public partial class Seasons : System.Web.UI.Page
                    "HomeWins as [Home Wins], " +
                    "HomeLosses as [Home Losses], " +
                    "HomeTies as [Home Ties], " +
-                   "HomeOT as [Home OT]";
+                   "HomeOT as [Home OT], " +
+                   "HomePPPercent as [Home PP%], " +
+                   "HomePenaltyKill as [Home PK%]";
 
         if (String.IsNullOrEmpty(Request["project"]) && Request["show"] == "away")
             return "Description as Season, " +
@@ -57,7 +59,9 @@ public partial class Seasons : System.Web.UI.Page
                    "AwayWins as [Away Wins], " +
                    "AwayLosses as [Away Losses], " +
                    "AwayTies as [Away Ties], " +
-                   "AwayOT as [Away OT]";
+                   "AwayOT as [Away OT], " +
+                   "AwayPPPercent as [Away PP%], " +
+                   "AwayPenaltyKill as [Away PK%]";
 
         if (!String.IsNullOrEmpty(Request["project"]) && Request["show"] == "home")
             return "Description as Season, " +
@@ -73,11 +77,13 @@ public partial class Seasons : System.Web.UI.Page
                 "Losses, " +
                 "Ties, " +
                 "OT, " +
-                "GoalsFor as [Goals Scored], " +
-                "GoalsAgainst as [Goals Against], " +
-                "GoalsToGoalsAgainst as [Goals to Goals Against Ratio], " +
+                "GoalsFor as [G], " +
+                "GoalsAgainst as [GA], " +
+                "GoalsToGoalsAgainst as [G:GA], " +
+                "PPPercent as [PP%], " +
+                "PenaltyKill as [PK%], " +
                 "GoalsPerPoint as [Goals Scored per Point], " +
-                "AverageAge as [Average Player Age]";
+                "AverageAge as [Avg. Player Age]";
     }
 
     private string GenerateWhereClause()

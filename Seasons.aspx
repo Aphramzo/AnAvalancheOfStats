@@ -54,6 +54,9 @@
          <b>Columns:</b>
         <ul>
             <li>
+                G:GA:  Goals scored to goals against ratio.  When this number is greater than one, the Avalanche scored more goals than they allowed.
+            </li>
+            <li>
                 Average Player Age:  The average age of the team.  This is based on the players age as of October 1st of the year the season started, and is weighted for how many games the player played in.  This only includes skaters, and not goalies.
             </li>
         </ul>
