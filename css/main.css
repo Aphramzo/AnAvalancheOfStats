@@ -181,3 +181,13 @@ table th
 	text-decoration: none;
 	font-weight:bold;
 }
+
+.bold
+{
+	font-weight: bold;
+}
+
+.showBullet
+{
+	list-style-type:circle;
+}

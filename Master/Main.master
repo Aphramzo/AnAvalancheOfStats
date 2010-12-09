@@ -33,6 +33,9 @@
                     <li>
                         <a href="../Playoffs.aspx" class="menuItem">Playoffs</a>
                     </li>
+                    <li>
+                        <a href="../TeamRecords.aspx" class="menuItem">Single Game Records</a>
+                    </li>
                 </ul>
             </li>
             <li>
