@@ -18,6 +18,8 @@
 <body>
     <div class="header title">
             An Avalanche of Stats
+            <br />
+            <span class="smallTitle">In-depth Colorado Avalanche Statistics</span>
     </div>
     <span class="AccordionNavigation left">
         <ul class="menu">
