@@ -50,6 +50,12 @@ public partial class Player : System.Web.UI.Page
         dgSeasons.DataSource = gridCommand.ExecuteReader(CommandBehavior.CloseConnection);
         dgSeasons.DataBind();
 
+        String sqlString2 = String.Format("spPlayerSeasonTotalsWithRanks {0}", playerId);
+        SqlCommand gridCommand2 = new SqlCommand(sqlString2, scripts.GetConnection());
+
+        dgSeasonTotals.DataSource = gridCommand2.ExecuteReader(CommandBehavior.CloseConnection);
+        dgSeasonTotals.DataBind();
+
         String sqlString1 = String.Format("select {0} from vPlayerPlayoff {1}", GenerateSelectColumns(), " where playerId = " + playerId);
         SqlCommand gridCommand1 = new SqlCommand(sqlString1, scripts.GetConnection());
 

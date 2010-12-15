@@ -29,6 +29,11 @@
         <asp:DataGrid ID="dgSeasons" runat="server" CssClass="dataGrid" CellPadding="2">
         </asp:DataGrid>
     </div>
+    <div>
+        Regular Season Totals: 
+        <asp:DataGrid ID="dgSeasonTotals" runat="server" CssClass="dataGrid" CellPadding="2">
+        </asp:DataGrid>
+    </div>
     <span id="seasonChart"></span>
     <br />
     <div>
