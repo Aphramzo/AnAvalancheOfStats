@@ -66,7 +66,6 @@
                 { "sType": "numeric" },
                 { "sType": "numeric" },
                 { "sType": "numeric" },
-                { "sType": "numeric" },
                 { "sType": "numeric" }
             ]
         });
