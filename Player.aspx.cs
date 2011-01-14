@@ -77,7 +77,6 @@ public partial class Player : System.Web.UI.Page
                 "PP, " +
                 "SH, " +
                 "GW, " +
-                "OTGoals as [OT], " +
                 "Shots, " +
                 "ATOI, " +
                 "ShiftsPerGame as [Shifts Per Game], " +
