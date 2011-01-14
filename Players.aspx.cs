@@ -47,20 +47,19 @@ public partial class Players : System.Web.UI.Page
         else if (String.IsNullOrEmpty(Request["sum"]) && !String.IsNullOrEmpty(Request["perGame"]))
         {
             return
-            "Id as Rank, Description as Season, " +
-               "'<a class=\"'+ IsCurrent + '\" href=\"../Player.aspx?id=' + convert(varchar, playerId) + '\">' + PlayerName + '</a>' as Player, " +
-               "Position as POS, " +
-               "Age, " +
-               "GP as [Games Played], " +
-               "GoalsPerGame as [Goals Per Game], " +
-               "AssistsPerGame as [Assists Per Game], " +
-               "PointsPerGame as [Points Per Game], " +
-               "PIMPerGame as [PIM Per Game], " +
-               "PPPerGame as [PP Per Game], " +
-               "SHPerGame as [SH Per Game], " +
-               "GWPerGame as [GW Per Game], " +
-               "ShotsPerGame as [Shots Per Game], " +
-               "ShiftsPerGame";
+                "Id as Rank, Description as Season, " +
+                "'<a class=\"'+ IsCurrent + '\" href=\"../Player.aspx?id=' + convert(varchar, playerId) + '\">' + PlayerName + '</a>' as Player, " +
+                "Position as POS, " +
+                "Age, " +
+                "GP as [Games Played], " +
+                "GoalsPerGame as [Goals Per Game], " +
+                "AssistsPerGame as [Assists Per Game], " +
+                "PointsPerGame as [Points Per Game], " +
+                "PIMPerGame as [PIM Per Game], " +
+                "PPPerGame as [PP Per Game], " +
+                "SHPerGame as [SH Per Game], " +
+                "GWPerGame as [GW Per Game], " +
+                "ShotsPerGame as [Shots Per Game]";
         }
         else if (!String.IsNullOrEmpty(Request["sum"]) && !String.IsNullOrEmpty(Request["perGame"]))
         {
