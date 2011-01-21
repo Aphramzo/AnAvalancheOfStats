@@ -42,7 +42,7 @@
     $('#showSeasonChart').click(function(event) {
         event.preventDefault();
         $('#seasonChart').insertFusionCharts({
-            swfPath: "../AnAvalancheOfStats/charts/",
+            swfPath: "../charts/",
             type: "MSLine2D",
             data: "PlayerChart.aspx?Id=" + $('#playerId').val(),
             dataFormat: "URIData",
@@ -55,7 +55,7 @@
     $('#showPlayoffChart').click(function(event) {
         event.preventDefault();
         $('#playoffChart').insertFusionCharts({
-            swfPath: "../AnAvalancheOfStats/charts/",
+            swfPath: "../charts/",
             type: "MSLine2D",
             data: "PlayerChart.aspx?Playoffs=1&Id=" + $('#playerId').val(),
             dataFormat: "URIData",
