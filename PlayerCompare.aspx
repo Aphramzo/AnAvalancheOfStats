@@ -12,14 +12,16 @@
                 <li>
                     <label>Players</label>
                     <asp:DropDownList ID="player1" AppendDataBoundItems="true" runat="server">
+                        <asp:ListItem Text="(select player)" Value="" />
                     </asp:DropDownList> 
                     and
                     <asp:DropDownList ID="player2" runat="server" AppendDataBoundItems="true" runat="server">
+                        <asp:ListItem Text="(select player)" Value="" />
                     </asp:DropDownList>
                 </li>
                 <li>
                     <label>Stat</label>
-                    <select name="stat" id="stat">
+                    <select name="stat" id="stat" runat="server">
                         <option value="G">Goals</option>
                         <option value="A">Assists</option>
                         <option value="Points">Points</option>
@@ -30,7 +32,9 @@
                     </select>
                 </li>
                 <li>
-                    <button id="showChart">Compare</button>
+                    <button id="showChart">Compare</button>&nbsp;&nbsp;
+                    <a href="#" id="createLink">Link to this comparison</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span id="linkSpan"></span>
                 </li>
             </ul>
         </form>
@@ -38,10 +42,10 @@
     <span id="compareChart"></span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="explainingColumn" runat="server">
-    <b>Columns:</b>
+    <b>About:</b>
         <ul>
             <li>
-                Age:  Players age as of October 1st of the year the season started.
+                Select two players to compare their stats through the same number of games played with the Avalanche.
             </li>
         </ul>
 </asp:Content>
