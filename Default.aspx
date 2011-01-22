@@ -42,7 +42,7 @@
         <li>
             Welcome to an Avalanche of Stats.  Here you <i>will</i> be able to find just about any stat about the Colorado Avalanche you can dream up.  
             Stats will be updated as regularly as humanly possible.  You can find the last time they were updated over to the left.  This is a work in progess,
-            so please check back often.  You can see what updates have been added over to the left.  Message boards will be available soon, so if you have found a problem,
+            so please check back often.  You can see what updates have been added over to the left.  <a href="/phpBB/">Message boards</a> are here, so if you have found a problem,
             or would like to request a stat be added, you can post there.
         </li>
         <li>

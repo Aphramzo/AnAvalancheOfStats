@@ -20,7 +20,6 @@
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:Players.js" caret="5234" fromTop="32" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:TimePer.js" caret="956" fromTop="12" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:TimePer.aspx" caret="4054" fromTop="11" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Default.aspx" caret="527" fromTop="5" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Players.aspx" caret="3747" fromTop="28" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerChart.aspx" caret="132" fromTop="2" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Player.aspx" caret="1149" fromTop="19" />
@@ -28,7 +27,6 @@
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Seasons.aspx" caret="9" fromTop="0" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Seasons.aspx.cs" caret="526" fromTop="18" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:TeamRecords.aspx" caret="1141" fromTop="28" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="1254" fromTop="21" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:css/f:main.css" caret="208" fromTop="18" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:TeamRecords.aspx.cs" caret="400" fromTop="15" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:Player.js" caret="1900" fromTop="22" />
@@ -39,11 +37,11 @@
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="3839" fromTop="16" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompare.aspx" caret="2217" fromTop="23" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Splits.aspx" caret="857" fromTop="18" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Default.aspx" caret="2478" fromTop="33" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="3431" fromTop="26" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:app_offline.htm" caret="138" fromTop="2" />
     </RecentFiles>
     <RecentEdits>
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Player.aspx.cs" caret="3175" fromTop="33" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Player.aspx.cs" caret="3175" fromTop="13" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Player.aspx.cs" caret="3175" fromTop="15" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Player.aspx.cs" caret="1933" fromTop="17" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="3685" fromTop="5" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="5934" fromTop="20" />
@@ -71,6 +69,9 @@
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="3293" fromTop="25" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="3567" fromTop="30" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Splits.aspx" caret="1929" fromTop="28" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Default.aspx" caret="2282" fromTop="29" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="3306" fromTop="21" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:app_offline.htm" caret="180" fromTop="2" />
     </RecentEdits>
   </RecentFiles>
   <UnitTestRunner>
