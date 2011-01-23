@@ -137,11 +137,72 @@ public partial class PlayerCompareChart : System.Web.UI.Page
                 
             }
         }
+        if(Request["showTrends"] == "true")
+        {
+            XmlElement trendline = AddTrends(xmlDoc, player1, player2, xEle);
+            xEle.AppendChild(trendline);
+        }
+            
         xEle.AppendChild(categories);
         xEle.AppendChild(player1);
         xEle.AppendChild(player2);
+        
         xmlDoc.AppendChild(xEle);
         return xmlDoc.OuterXml;
+    }
+
+    private XmlElement AddTrends(XmlDocument xmlDoc, XmlElement player1, XmlElement player2, XmlElement xmlElement)
+    {
+        XmlElement trendline = xmlDoc.CreateElement("trendLines");
+        XmlElement tmpElement;
+        double gpPlayer1 = player1.ChildNodes.Count;
+        double gpPlayer2 = player2.ChildNodes.Count;
+        int player1MaxValue = Convert.ToInt32(player1.LastChild.Attributes.GetNamedItem("value").Value);
+        int player2MaxValue = Convert.ToInt32(player2.LastChild.Attributes.GetNamedItem("value").Value);
+        if(gpPlayer1 >= gpPlayer2)
+        {
+            tmpElement = xmlDoc.CreateElement("line");
+            tmpElement.SetAttribute("startValue", "0");
+            tmpElement.SetAttribute("endValue", Convert.ToString(player1MaxValue));
+            tmpElement.SetAttribute("color", "#660000");
+            trendline.AppendChild(tmpElement);
+
+            double player2FinalValue = Convert.ToInt32(player2.LastChild.Attributes.GetNamedItem("value").Value);
+            int player2ProjectedFinal = Convert.ToInt32((gpPlayer1 / gpPlayer2) * player2FinalValue);
+
+            if (player2ProjectedFinal > player1MaxValue)
+            {
+                xmlElement.SetAttribute("yAxisMaxValue", player2ProjectedFinal.ToString());
+            }
+
+            tmpElement = xmlDoc.CreateElement("line");
+            tmpElement.SetAttribute("startValue", "0");
+            tmpElement.SetAttribute("color", "#000066");
+            tmpElement.SetAttribute("endValue", Convert.ToString(player2ProjectedFinal));
+            trendline.AppendChild(tmpElement);  
+        }
+        else if (gpPlayer1 < gpPlayer2)
+        {
+            tmpElement = xmlDoc.CreateElement("line");
+            tmpElement.SetAttribute("startValue", "0");
+            tmpElement.SetAttribute("endValue", Convert.ToString(player2MaxValue));
+            tmpElement.SetAttribute("color", "#000066");
+            trendline.AppendChild(tmpElement);
+
+            double player1FinalValue = Convert.ToInt32(player1.LastChild.Attributes.GetNamedItem("value").Value);
+            int player1ProjectedFinal = Convert.ToInt32((gpPlayer2/gpPlayer1)*player1FinalValue);
+            if(player1ProjectedFinal > player2MaxValue)
+            {
+                xmlElement.SetAttribute("yAxisMaxValue", player1ProjectedFinal.ToString());
+            }
+            tmpElement = xmlDoc.CreateElement("line");
+            tmpElement.SetAttribute("startValue", "0");
+            tmpElement.SetAttribute("color", "#660000");
+            tmpElement.SetAttribute("endValue", Convert.ToString(player1ProjectedFinal));
+            trendline.AppendChild(tmpElement);
+        }
+       
+        return trendline;
     }
 
     private string GetDataString(double playerId)
