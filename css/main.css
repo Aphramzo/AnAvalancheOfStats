@@ -196,3 +196,8 @@ table th
 {
 	list-style-type:circle;
 }
+
+td
+{
+    white-space: nowrap;
+}
