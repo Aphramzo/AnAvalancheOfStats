@@ -45,45 +45,7 @@ public class Loader
     {
         DateTime gameDate = DateTime.MinValue;
 
-        // used to build entire input
-        StringBuilder sb = new StringBuilder();
-
-        // used on each read operation
-        byte[] buf = new byte[8192];
-
-        // prepare the web page we will be asking for
-        HttpWebRequest request = (HttpWebRequest)
-            WebRequest.Create(gamePage);
-
-        // execute the request
-        HttpWebResponse response = (HttpWebResponse)
-            request.GetResponse();
-
-        // we will read data via the response stream
-        Stream resStream = response.GetResponseStream();
-
-        string tempString = null;
-        int count = 0;
-
-        do
-        {
-            // fill the buffer with data
-            count = resStream.Read(buf, 0, buf.Length);
-
-            // make sure we read some data
-            if (count != 0)
-            {
-                // translate from bytes to ASCII text
-                tempString = Encoding.ASCII.GetString(buf, 0, count);
-
-                // continue building the string
-                sb.Append(tempString);
-            }
-        }
-        while (count > 0); // any more data to read?
-
-        // print out page source
-        String HTML = sb.ToString();
+        String HTML = GetPageHTML(gamePage);
         HTML = HTML.Replace("<!--&nbsp;-->", "");
         HTML = HTML.Replace("&nbsp;", "");
         //lets get it into XML to make it easier to read
@@ -92,6 +54,8 @@ public class Loader
 
         //get the game date
         System.Xml.XmlNodeList nodes = doc.SelectNodes("/html/body/table/tr/td/table/tr/td/table/tr/td/table[@id='GameInfo']");
+        if (nodes.Count == 0)
+            nodes = doc.SelectNodes("/XMLFile/html/body/table/tr/td/table/tr/td/table/tr/td/table[@id='GameInfo']");
         foreach (System.Xml.XmlNode node in nodes)
         {
             String dateString = node.ChildNodes[3].ChildNodes[0].InnerText;
@@ -99,6 +63,8 @@ public class Loader
         }
 
         nodes = doc.SelectNodes("/html/body/table/tr/td/table/tr/td");
+        if (nodes.Count == 0)
+           nodes = doc.SelectNodes("/XMLFile/html/body/table/tr/td/table/tr/td");
         foreach (System.Xml.XmlNode node in nodes)
         {
             if (node.InnerText.Trim() == "COLORADO AVALANCHE")
@@ -134,6 +100,11 @@ public class Loader
         //dont want goalie stats here
         if (playerGame.ChildNodes[POSITION].InnerText.Trim() == "G")
             return;
+
+        //If there was a team penalty (Too many men) we need to filter it out
+        if (playerGame.ChildNodes[PLAYERNAME].InnerText.Trim() == "TEAM PENALTY")
+            return;
+
 
 
         String sqlToExecute = "InsertPlayerGame '{0}', {1}, {2}, {3}, {4}, {5}, '{6}', {7}, '{8}', '{9}', '{10}', {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, '{20}'";
@@ -174,5 +145,49 @@ public class Loader
             value = "0";
 
         return value.Replace("'","''").Replace("+","");
+    }
+
+    private static String GetPageHTML(String gamePage)
+    {
+        // used to build entire input
+        StringBuilder sb = new StringBuilder();
+
+        // used on each read operation
+        byte[] buf = new byte[8192];
+
+        // prepare the web page we will be asking for
+        HttpWebRequest request = (HttpWebRequest)
+            WebRequest.Create(gamePage);
+
+        // execute the request
+        HttpWebResponse response = (HttpWebResponse)
+            request.GetResponse();
+
+        // we will read data via the response stream
+        Stream resStream = response.GetResponseStream();
+
+        string tempString = null;
+        int count = 0;
+
+        do
+        {
+            // fill the buffer with data
+            count = resStream.Read(buf, 0, buf.Length);
+
+            // make sure we read some data
+            if (count != 0)
+            {
+                // translate from bytes to ASCII text
+                tempString = Encoding.ASCII.GetString(buf, 0, count);
+
+                // continue building the string
+                sb.Append(tempString);
+            }
+        }
+        while (count > 0); // any more data to read?
+
+        // print out page source
+        String HTML = sb.ToString();
+        return HTML;
     }
 }

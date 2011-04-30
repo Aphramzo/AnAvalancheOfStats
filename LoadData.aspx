@@ -9,7 +9,18 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+        Season: 
+        <select name="season">
+            <option value="20072008">07-08</option>
+            <option value="20082009">08-09</option>
+            <option value="20092010">09-10</option>
+            <option value="20102011">10-11</option>
+        </select>
+        <br />
+        From Game Number: <input name="from" />
+        <br />
+        To Game Number: <input name="to" />
+        <input type="submit" value="Load Games" />
     </div>
     </form>
 </body>
