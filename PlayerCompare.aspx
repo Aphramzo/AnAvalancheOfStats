@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Player Compare - An Avalanche Of Stats</title>
-    <script src="/AnAvalancheOfStats/js/PlayerCompare.js" type="text/javascript"></script>
+    <script src="/js/PlayerCompare.js" type="text/javascript"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="mainBody" runat="server">
     <fieldset>

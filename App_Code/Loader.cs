@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Xml;
+
 /// <summary>
 /// Summary description for Loader
 /// </summary>
@@ -69,15 +73,16 @@ public class Loader
         {
             if (node.InnerText.Trim() == "COLORADO AVALANCHE")
             {
-                RecordPlayerGamesFromTeamTable(node.ParentNode.ParentNode, gameDate);
+                RecordPlayerGamesFromTeamTable(node.ParentNode.ParentNode, gameDate, gamePage);
                 break;
             }
         }
 
     }
 
-    private void RecordPlayerGamesFromTeamTable(System.Xml.XmlNode playerTable, DateTime gameDate)
+    private void RecordPlayerGamesFromTeamTable(System.Xml.XmlNode playerTable, DateTime gameDate, String gamePage)
     {
+        List<PlayerSpecialTeamPoints> specialTeamPoints =  LoadSpecialTeamPoints(gamePage);
         Boolean startRecording = false;
         System.Xml.XmlNodeList nodes = playerTable.SelectNodes("tr");
         foreach (System.Xml.XmlNode node in nodes)
@@ -91,11 +96,79 @@ public class Loader
                 break;
 
             else if (startRecording && node.ChildNodes.Count > 10)
-                RecordSinglePlayerGame(node, gameDate);
+                RecordSinglePlayerGame(node, gameDate, specialTeamPoints);
         }
     }
 
-    private void RecordSinglePlayerGame(System.Xml.XmlNode playerGame, DateTime gameDate)
+    private List<PlayerSpecialTeamPoints> LoadSpecialTeamPoints(String gamePage)
+    {
+        List<PlayerSpecialTeamPoints> returnList = new List<PlayerSpecialTeamPoints>();
+        String eventPage = gamePage.Replace("ES02", "GS02");
+        String HTML = GetPageHTML(eventPage);
+        HTML = HTML.Replace("<!--&nbsp;-->", "");
+        HTML = HTML.Replace("&nbsp;", "");
+        //lets get it into XML to make it easier to read
+        XmlDocument doc = new XmlDocument();
+        doc.LoadXml(HTML);
+
+        XmlNodeList nodes = doc.SelectNodes("/html/body/table/tr/td/table/tr");
+        foreach(XmlNode node in nodes)
+        {
+            try
+            {
+                if(node.ChildNodes[4].InnerText.Trim() == "COL" )
+                {
+                    if(node.ChildNodes[3].InnerText.Trim() == "PP")
+                    {
+                        returnList.Add(new PlayerSpecialTeamPoints()
+                                           {
+                                               PlayerName = FormatPlayerName(node.ChildNodes[5].InnerText.Trim()),
+                                               PPGoals = 1
+                                           });
+
+                        returnList.Add(new PlayerSpecialTeamPoints()
+                        {
+                            PlayerName = FormatPlayerName(node.ChildNodes[6].InnerText.Trim()),
+                            PPAssists = 1
+                        });
+
+                        returnList.Add(new PlayerSpecialTeamPoints()
+                        {
+                            PlayerName = FormatPlayerName(node.ChildNodes[7].InnerText.Trim()),
+                            PPAssists = 1
+                        });
+                    }
+                    else if(node.ChildNodes[4].InnerText.Trim() == "SH")
+                    {
+                        returnList.Add(new PlayerSpecialTeamPoints()
+                        {
+                            PlayerName = FormatPlayerName(node.ChildNodes[5].InnerText.Trim()),
+                            SHGoals = 1
+                        });
+
+                        returnList.Add(new PlayerSpecialTeamPoints()
+                        {
+                            PlayerName = FormatPlayerName(node.ChildNodes[6].InnerText.Trim()),
+                            SHAssists = 1
+                        });
+
+                        returnList.Add(new PlayerSpecialTeamPoints()
+                        {
+                            PlayerName = FormatPlayerName(node.ChildNodes[7].InnerText.Trim()),
+                            SHAssists = 1
+                        });
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
+        return returnList;
+    }
+
+    private void RecordSinglePlayerGame(XmlNode playerGame, DateTime gameDate, List<PlayerSpecialTeamPoints> specialTeamPoints)
     {
         //dont want goalie stats here
         if (playerGame.ChildNodes[POSITION].InnerText.Trim() == "G")
@@ -107,7 +180,7 @@ public class Loader
 
 
 
-        String sqlToExecute = "InsertPlayerGame '{0}', {1}, {2}, {3}, {4}, {5}, '{6}', {7}, '{8}', '{9}', '{10}', {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, '{20}'";
+        String sqlToExecute = "InsertPlayerGame '{0}', {1}, {2}, {3}, {4}, {5}, '{6}', {7}, '{8}', '{9}', '{10}', {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, '{20}', {21}, {22}, {23}, {24}, {25}";
         sqlToExecute = String.Format(sqlToExecute,
                 ReadPlayerGameNode(playerGame, PLAYERNAME),
                 ReadPlayerGameNode(playerGame, GOALS),
@@ -129,13 +202,63 @@ public class Loader
                 ReadPlayerGameNode(playerGame, BLOCKEDSHOTS),
                 ReadPlayerGameNode(playerGame, FACEOFFSWON),
                 ReadPlayerGameNode(playerGame, FACEOFFSLOST),
-                gameDate.ToShortDateString()
+                gameDate.ToShortDateString(),
+                GetPlayerPPGoals(playerGame, specialTeamPoints),
+                GetPlayerPPAssists(playerGame, specialTeamPoints),
+                GetPlayerSHGoals(playerGame, specialTeamPoints),
+                GetPlayerSHAssists(playerGame, specialTeamPoints),
+                GetPlayerGWGoals(playerGame, specialTeamPoints)
             );
 
         SqlConnection connection = scripts.GetConnection();
         SqlCommand command = new SqlCommand(sqlToExecute, connection);
         command.ExecuteNonQuery();
         connection.Close();
+    }
+
+    private int GetPlayerPPGoals(XmlNode playerGame, List<PlayerSpecialTeamPoints> specialTeamPoints)
+    {
+        var playerName = GetFormattedPlayerName(playerGame);
+        if(specialTeamPoints.Where(c=>c.PlayerName == playerName).Count() > 0 )
+            return specialTeamPoints.Where(c=> c.PlayerName == playerName).Sum(x=> x.PPGoals);
+        
+        return 0;
+    }
+
+    private int GetPlayerPPAssists(XmlNode playerGame, List<PlayerSpecialTeamPoints> specialTeamPoints)
+    {
+        var playerName = GetFormattedPlayerName(playerGame);
+        if (specialTeamPoints.Where(c => c.PlayerName == playerName).Count() > 0)
+            return specialTeamPoints.Where(c => c.PlayerName == playerName).Sum(x => x.PPAssists);
+
+        return 0;
+    }
+
+    private int GetPlayerSHGoals(XmlNode playerGame, List<PlayerSpecialTeamPoints> specialTeamPoints)
+    {
+        var playerName = GetFormattedPlayerName(playerGame);
+        if (specialTeamPoints.Where(c => c.PlayerName == playerName).Count() > 0)
+            return specialTeamPoints.Where(c => c.PlayerName == playerName).Sum(x => x.SHGoals);
+
+        return 0;
+    }
+
+    private int GetPlayerSHAssists(XmlNode playerGame, List<PlayerSpecialTeamPoints> specialTeamPoints)
+    {
+        var playerName = GetFormattedPlayerName(playerGame);
+        if (specialTeamPoints.Where(c => c.PlayerName == playerName).Count() > 0)
+            return specialTeamPoints.Where(c => c.PlayerName == playerName).Sum(x => x.SHAssists);
+
+        return 0;
+    }
+
+    private int GetPlayerGWGoals(XmlNode playerGame, List<PlayerSpecialTeamPoints> specialTeamPoints)
+    {
+        var playerName = GetFormattedPlayerName(playerGame);
+        if (specialTeamPoints.Where(c => c.PlayerName == playerName).Count() > 0)
+            return specialTeamPoints.Where(c => c.PlayerName == playerName).Sum(x => x.GWGoals);
+
+        return 0;
     }
 
     private String ReadPlayerGameNode(System.Xml.XmlNode playerGame, int ordinal)
@@ -145,6 +268,20 @@ public class Loader
             value = "0";
 
         return value.Replace("'","''").Replace("+","");
+    }
+
+    private string FormatPlayerName(string playerName)
+    {
+        var nameArr = playerName.Split(' ');
+        return nameArr[1].Split('(')[0];
+    }
+
+    private string GetFormattedPlayerName(XmlNode playerGame)
+    {
+        var playerName = ReadPlayerGameNode(playerGame, PLAYERNAME);
+        var nameArr = playerName.Split(' ');
+        playerName = String.Format("{0}.{1}", nameArr[1].Substring(0, 1), nameArr[0].Substring(0,nameArr[0].Length-1));
+        return playerName;
     }
 
     private static String GetPageHTML(String gamePage)
@@ -190,4 +327,14 @@ public class Loader
         String HTML = sb.ToString();
         return HTML;
     }
+}
+
+public class PlayerSpecialTeamPoints
+{
+    public String PlayerName { get; set; }
+    public int PPGoals { get; set; }
+    public int PPAssists { get; set; }
+    public int SHGoals { get; set; }
+    public int SHAssists { get; set; }
+    public int GWGoals { get; set; }
 }

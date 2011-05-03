@@ -11,59 +11,38 @@
   </NAntValidationSettings>
   <RecentFiles>
     <RecentFiles>
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:PlayersPercent.js" caret="465" fromTop="7" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayersPercent.aspx.cs" caret="1863" fromTop="0" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayersPercent.aspx" caret="3578" fromTop="9" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:jquery.dataTables.min.js" caret="62434" fromTop="53" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Players.aspx.cs" caret="389" fromTop="15" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:TimePer.aspx.cs" caret="819" fromTop="18" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:Players.js" caret="5234" fromTop="32" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:TimePer.js" caret="956" fromTop="12" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:TimePer.aspx" caret="4054" fromTop="11" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Players.aspx" caret="3747" fromTop="28" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerChart.aspx" caret="132" fromTop="2" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Player.aspx" caret="1149" fromTop="19" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:accordionMenu.js" caret="3452" fromTop="22" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Seasons.aspx" caret="9" fromTop="0" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Seasons.aspx.cs" caret="526" fromTop="18" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:TeamRecords.aspx" caret="1141" fromTop="28" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:css/f:main.css" caret="208" fromTop="18" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:TeamRecords.aspx.cs" caret="400" fromTop="15" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:Player.js" caret="1900" fromTop="22" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Player.aspx.cs" caret="1351" fromTop="3" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerChart.aspx.cs" caret="2225" fromTop="15" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompare.aspx.cs" caret="393" fromTop="15" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:PlayerCompare.js" caret="479" fromTop="8" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="3839" fromTop="16" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompare.aspx" caret="2217" fromTop="23" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Splits.aspx" caret="857" fromTop="18" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Default.aspx" caret="2478" fromTop="33" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="3431" fromTop="26" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:app_offline.htm" caret="138" fromTop="2" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:Players.js" caret="5234" fromTop="134" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:css/f:main.css" caret="2519" fromTop="15" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:PlayerCompare.js" caret="1016" fromTop="21" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompare.aspx" caret="2325" fromTop="10" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:CommonPage.cs" caret="388" fromTop="12" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="854" fromTop="12" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Players.aspx" caret="269" fromTop="4" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:LoadData.aspx" caret="0" fromTop="0" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="10175" fromTop="12" />
     </RecentFiles>
     <RecentEdits>
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Player.aspx.cs" caret="1933" fromTop="17" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="3685" fromTop="5" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="5934" fromTop="20" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:PlayerCompare.js" caret="75" fromTop="1" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="4778" fromTop="21" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="5781" fromTop="29" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="5670" fromTop="24" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="5633" fromTop="27" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="2504" fromTop="4" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="893" fromTop="18" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="1435" fromTop="21" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompare.aspx" caret="1518" fromTop="19" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="725" fromTop="22" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="6036" fromTop="26" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:PlayerCompare.js" caret="411" fromTop="6" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="452" fromTop="16" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="4100" fromTop="9" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="5363" fromTop="26" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="1861" fromTop="16" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="2365" fromTop="30" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="2981" fromTop="12" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="2206" fromTop="21" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="4995" fromTop="14" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="4448" fromTop="21" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="3293" fromTop="25" />
@@ -71,7 +50,29 @@
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Splits.aspx" caret="1929" fromTop="28" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Default.aspx" caret="2282" fromTop="29" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="3306" fromTop="21" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:app_offline.htm" caret="180" fromTop="2" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Players.aspx" caret="618" fromTop="12" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:css/f:main.css" caret="1143" fromTop="16" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:css/f:main.css" caret="2548" fromTop="17" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="846" fromTop="12" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:PlayerCompare.js" caret="381" fromTop="9" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:PlayerCompare.js" caret="1016" fromTop="21" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompare.aspx" caret="296" fromTop="4" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="867" fromTop="12" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="458" fromTop="8" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="465" fromTop="8" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="854" fromTop="12" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Players.aspx" caret="269" fromTop="4" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="2632" fromTop="14" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="3806" fromTop="7" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="5108" fromTop="25" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="5074" fromTop="18" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="5324" fromTop="24" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="5682" fromTop="12" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="5930" fromTop="18" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="6180" fromTop="24" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="6401" fromTop="22" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="2879" fromTop="8" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="10340" fromTop="15" />
     </RecentEdits>
   </RecentFiles>
   <UnitTestRunner>
@@ -84,21 +85,21 @@
     <ItemStatistics item="Default">
       <Item value="private" priority="3" />
       <Item value="string" priority="0" />
-      <Item value="if" priority="11" />
+      <Item value="if" priority="14" />
       <Item value="Request" priority="3" />
-      <Item value="return" priority="5" />
+      <Item value="return" priority="6" />
       <Item value="IFormatProvider" priority="0" />
       <Item value="String" priority="3" />
       <Item value="Response" priority="0" />
       <Item value="using" priority="0" />
-      <Item value="System" priority="1" />
-      <Item value="Xml" priority="1" />
+      <Item value="System" priority="2" />
+      <Item value="Xml" priority="2" />
       <Item value="XmlDocument" priority="1" />
       <Item value="xmlDoc" priority="3" />
       <Item value="double" priority="1" />
-      <Item value="new" priority="1" />
+      <Item value="new" priority="3" />
       <Item value="XmlNode" priority="1" />
-      <Item value="var" priority="1" />
+      <Item value="var" priority="3" />
       <Item value="protected" priority="1" />
       <Item value="XmlElement" priority="3" />
       <Item value="xmlNode" priority="0" />
@@ -125,6 +126,27 @@
       <Item value="player1Name" priority="0" />
       <Item value="mostGames" priority="2" />
       <Item value="modBy" priority="3" />
+      <Item value="String`0" priority="2" />
+      <Item value="gamePage" priority="0" />
+      <Item value="eventPage" priority="0" />
+      <Item value="foreach" priority="0" />
+      <Item value="XmlNode`0" priority="0" />
+      <Item value="in" priority="0" />
+      <Item value="try" priority="0" />
+      <Item value="node" priority="1" />
+      <Item value="class" priority="0" />
+      <Item value="public" priority="3" />
+      <Item value="int" priority="3" />
+      <Item value="else" priority="0" />
+      <Item value="HttpListener`0" priority="0" />
+      <Item value="PlayerSpecialTeamPoints`0" priority="2" />
+      <Item value="List" priority="1" />
+      <Item value="List&lt;PlayerSpecialTeamPoints&gt;" priority="0" />
+      <Item value="returnList" priority="1" />
+      <Item value="PlayerSpecialTeamPoints" priority="0" />
+      <Item value="PlayerName" priority="0" />
+      <Item value="PPGoals" priority="0" />
+      <Item value="PPAssists" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.String">
       <Item value="IsNullOrEmpty" priority="4" />
@@ -163,9 +185,18 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.String">
       <Item value="ToString" priority="0" />
+      <Item value="Replace`0" priority="0" />
+      <Item value="Trim`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.DateTime">
       <Item value="ToShortDateString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlNode">
+      <Item value="ChildNodes" priority="1" />
+      <Item value="InnerText" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Add`0" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
   <UnitTestRunnerNUnit>

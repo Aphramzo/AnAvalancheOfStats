@@ -7,7 +7,7 @@
         }
 
         $('#compareChart').insertFusionCharts({
-            swfPath: "../AnAvalancheOfStats/charts/",
+            swfPath: "../charts/",
             type: "MSLine2D",
             data: "PlayerCompareChart.aspx?Player1Id=" + $('#ctl00_mainBody_player1').val() + "&Player2Id=" + $('#ctl00_mainBody_player2').val() + "&stat=" + $('#ctl00_mainBody_stat').val() + '&showTrends=' + $('#showTrends').is(':checked'),
             dataFormat: "URIData",
@@ -19,7 +19,7 @@
 
     if ($('#ctl00_mainBody_player1').val() != '' || $('#ctl00_mainBody_player1').val() != '') {
         $('#compareChart').insertFusionCharts({
-            swfPath: "../AnAvalancheOfStats/charts/",
+            swfPath: "../charts/",
             type: "MSLine2D",
             data: "PlayerCompareChart.aspx?Player1Id=" + $('#ctl00_mainBody_player1').val() + "&Player2Id=" + $('#ctl00_mainBody_player2').val() + "&stat=" + $('#ctl00_mainBody_stat').val() + '&showTrends=' + $('#showTrends').is(':checked'),
             dataFormat: "URIData",
