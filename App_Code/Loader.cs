@@ -103,6 +103,8 @@ public class Loader
     private List<PlayerSpecialTeamPoints> LoadSpecialTeamPoints(String gamePage)
     {
         List<PlayerSpecialTeamPoints> returnList = new List<PlayerSpecialTeamPoints>();
+        var avGoals = 0;
+        var otherGoals = 0;
         String eventPage = gamePage.Replace("ES02", "GS02");
         String HTML = GetPageHTML(eventPage);
         HTML = HTML.Replace("<!--&nbsp;-->", "");
@@ -111,14 +113,21 @@ public class Loader
         XmlDocument doc = new XmlDocument();
         doc.LoadXml(HTML);
 
-        XmlNodeList nodes = doc.SelectNodes("/html/body/table/tr/td/table/tr");
+        XmlNodeList nodes = doc.SelectNodes("/html/body/table");
+        if (nodes.Count == 0)
+            nodes = doc.SelectNodes("/XMLFile/html/body/table");
+        nodes = nodes.Item(0).ChildNodes[3].ChildNodes[0].ChildNodes[0].ChildNodes;
+
         foreach(XmlNode node in nodes)
         {
             try
             {
                 if(node.ChildNodes[4].InnerText.Trim() == "COL" )
                 {
-                    if(node.ChildNodes[3].InnerText.Trim() == "PP")
+                    //need to make sure its not a missed PS
+                    if (node.ChildNodes[6].InnerText.Trim() != "Unsuccessful Penalty Shot")
+                        avGoals = avGoals + 1;
+                    if(node.ChildNodes[3].InnerText.Trim() == "PP" || node.ChildNodes[3].InnerText.Trim() == "PP-EN")
                     {
                         returnList.Add(new PlayerSpecialTeamPoints()
                                            {
@@ -138,7 +147,7 @@ public class Loader
                             PPAssists = 1
                         });
                     }
-                    else if(node.ChildNodes[4].InnerText.Trim() == "SH")
+                    else if (node.ChildNodes[3].InnerText.Trim() == "SH" || node.ChildNodes[3].InnerText.Trim() == "SH-EN")
                     {
                         returnList.Add(new PlayerSpecialTeamPoints()
                         {
@@ -159,10 +168,41 @@ public class Loader
                         });
                     }
                 }
+                else if(node.ChildNodes[4].InnerText.Trim() != "Team")
+                {
+                    if (node.ChildNodes[6].InnerText.Trim() != "Unsuccessful Penalty Shot")
+                        otherGoals = otherGoals + 1;
+                }
             }
             catch (Exception)
             {
                 
+            }
+        }
+        //if the avs scored more, we need to grab the GWG
+        if(avGoals > otherGoals)
+        {
+            var p = 1;
+            for(var i = nodes.Count-1;i>=0;i--)
+            {
+                if(nodes[i].ChildNodes[4].InnerText.Trim() == "COL")
+                {
+                    //no GWG for stupid SO's
+                    if (nodes[i].ChildNodes[1].InnerText.Trim() == "SO")
+                        break;
+
+                    
+                    if (p == (avGoals-otherGoals))
+                    {
+                        returnList.Add(new PlayerSpecialTeamPoints()
+                        {
+                            PlayerName = FormatPlayerName(nodes[i].ChildNodes[5].InnerText.Trim()),
+                            GWGoals = 1
+                        });
+                        break;
+                    }
+                    p = p + 1;
+                }
             }
         }
         return returnList;
@@ -281,7 +321,7 @@ public class Loader
         var playerName = ReadPlayerGameNode(playerGame, PLAYERNAME);
         var nameArr = playerName.Split(' ');
         playerName = String.Format("{0}.{1}", nameArr[1].Substring(0, 1), nameArr[0].Substring(0,nameArr[0].Length-1));
-        return playerName;
+        return playerName.Replace("''", "'");
     }
 
     private static String GetPageHTML(String gamePage)
