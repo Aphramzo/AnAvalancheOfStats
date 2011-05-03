@@ -218,6 +218,12 @@ public class Loader
         if (playerGame.ChildNodes[PLAYERNAME].InnerText.Trim() == "TEAM PENALTY")
             return;
 
+        //lets make sure that this player exists in our database already
+        if(!PlayerExistsInDatabase(playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''","'")))
+        {
+            Console.WriteLine("need to load" + playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'"));
+            LoadPlayerIntoDatabase(playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'"));
+        }
 
 
         String sqlToExecute = "InsertPlayerGame '{0}', {1}, {2}, {3}, {4}, {5}, '{6}', {7}, '{8}', '{9}', '{10}', {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, '{20}', {21}, {22}, {23}, {24}, {25}";
@@ -254,6 +260,42 @@ public class Loader
         SqlCommand command = new SqlCommand(sqlToExecute, connection);
         command.ExecuteNonQuery();
         connection.Close();
+    }
+
+    private void LoadPlayerIntoDatabase(string playerName)
+    {
+        playerName = scripts.PlayerNameFirstLastFromLastFirst(playerName).ToUpper();
+        //first we have to load the roster page
+        var playerId = GetNHLPlayerIdFromName(playerName);
+        var HTML = GetPageHTML(String.Format("http://avalanche.nhl.com/club/player.htm?id={0}", playerId));
+
+    }
+
+    private String GetNHLPlayerIdFromName(string playerName)
+    {
+        var HTML = GetPageHTML("http://avalanche.nhl.com/club/roster.htm").ToUpper();
+        if (!HTML.Contains(playerName))
+            HTML = GetPageHTML("http://avalanche.nhl.com/club/roster.htm?type=prospect").ToUpper();
+
+        var indexOf = HTML.IndexOf(playerName + "</A>");
+        var tmpID = HTML.Substring(indexOf - 13, 13);
+        var id = tmpID.Split('=')[1].Split('"')[0];
+    }
+
+    private bool PlayerExistsInDatabase(string playerName)
+    {
+        playerName = scripts.PlayerNameFirstLastFromLastFirst(playerName);
+        var connection = scripts.GetConnection();
+        var command = new SqlCommand(String.Format("select * from avDBPlayer where name = '{0}'", playerName.Replace("'","''")), connection);
+        var results = command.ExecuteReader();
+        if(results.HasRows)
+        {
+            connection.Close();
+            return true;
+        }
+
+        connection.Close();
+        return false;
     }
 
     private int GetPlayerPPGoals(XmlNode playerGame, List<PlayerSpecialTeamPoints> specialTeamPoints)
