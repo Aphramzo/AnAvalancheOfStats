@@ -167,6 +167,26 @@ public class Loader
                             SHAssists = 1
                         });
                     }
+
+                    //lets record empty netters too, why not?
+                    if(node.ChildNodes[3].InnerText.Contains("EN"))
+                    {
+                        returnList.Add(new PlayerSpecialTeamPoints()
+                        {
+                            PlayerName = FormatPlayerName(node.ChildNodes[5].InnerText.Trim()),
+                            ENGoals = 1
+                        });
+                        returnList.Add(new PlayerSpecialTeamPoints()
+                        {
+                            PlayerName = FormatPlayerName(node.ChildNodes[6].InnerText.Trim()),
+                            ENAssists = 1
+                        });
+                        returnList.Add(new PlayerSpecialTeamPoints()
+                        {
+                            PlayerName = FormatPlayerName(node.ChildNodes[7].InnerText.Trim()),
+                            ENAssists = 1
+                        });
+                    }
                 }
                 else if(node.ChildNodes[4].InnerText.Trim() != "Team")
                 {
@@ -199,6 +219,17 @@ public class Loader
                             PlayerName = FormatPlayerName(nodes[i].ChildNodes[5].InnerText.Trim()),
                             GWGoals = 1
                         });
+                        returnList.Add(new PlayerSpecialTeamPoints()
+                        {
+                            PlayerName = FormatPlayerName(nodes[i].ChildNodes[6].InnerText.Trim()),
+                            GWAssists = 1
+                        });
+                        returnList.Add(new PlayerSpecialTeamPoints()
+                        {
+                            PlayerName = FormatPlayerName(nodes[i].ChildNodes[7].InnerText.Trim()),
+                            GWAssists = 1
+                        });
+
                         break;
                     }
                     p = p + 1;
@@ -219,14 +250,14 @@ public class Loader
             return;
 
         //lets make sure that this player exists in our database already
-        if(!PlayerExistsInDatabase(playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''","'")))
-        {
-            Console.WriteLine("need to load" + playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'"));
-            LoadPlayerIntoDatabase(playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'"));
-        }
+        //if(!PlayerExistsInDatabase(playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''","'")))
+        //{
+        //    Console.WriteLine("need to load" + playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'"));
+        //    LoadPlayerIntoDatabase(playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'"));
+        //}
 
 
-        String sqlToExecute = "InsertPlayerGame '{0}', {1}, {2}, {3}, {4}, {5}, '{6}', {7}, '{8}', '{9}', '{10}', {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, '{20}', {21}, {22}, {23}, {24}, {25}";
+        String sqlToExecute = "InsertPlayerGame '{0}', {1}, {2}, {3}, {4}, {5}, '{6}', {7}, '{8}', '{9}', '{10}', {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, '{20}', {21}, {22}, {23}, {24}, {25}, {26}, {27}, {28}";
         sqlToExecute = String.Format(sqlToExecute,
                 ReadPlayerGameNode(playerGame, PLAYERNAME),
                 ReadPlayerGameNode(playerGame, GOALS),
@@ -253,7 +284,10 @@ public class Loader
                 GetPlayerPPAssists(playerGame, specialTeamPoints),
                 GetPlayerSHGoals(playerGame, specialTeamPoints),
                 GetPlayerSHAssists(playerGame, specialTeamPoints),
-                GetPlayerGWGoals(playerGame, specialTeamPoints)
+                GetPlayerGWGoals(playerGame, specialTeamPoints),
+                GetPlayerGWAssists(playerGame, specialTeamPoints),
+                GetPlayerENGoals(playerGame, specialTeamPoints),
+                GetPlayerENAssists(playerGame, specialTeamPoints)
             );
 
         SqlConnection connection = scripts.GetConnection();
@@ -280,6 +314,7 @@ public class Loader
         var indexOf = HTML.IndexOf(playerName + "</A>");
         var tmpID = HTML.Substring(indexOf - 13, 13);
         var id = tmpID.Split('=')[1].Split('"')[0];
+        return "TMP";
     }
 
     private bool PlayerExistsInDatabase(string playerName)
@@ -343,6 +378,33 @@ public class Loader
         return 0;
     }
 
+    private int GetPlayerGWAssists(XmlNode playerGame, List<PlayerSpecialTeamPoints> specialTeamPoints)
+    {
+        var playerName = GetFormattedPlayerName(playerGame);
+        if (specialTeamPoints.Where(c => c.PlayerName == playerName).Count() > 0)
+            return specialTeamPoints.Where(c => c.PlayerName == playerName).Sum(x => x.GWAssists);
+
+        return 0;
+    }
+
+    private int GetPlayerENGoals(XmlNode playerGame, List<PlayerSpecialTeamPoints> specialTeamPoints)
+    {
+        var playerName = GetFormattedPlayerName(playerGame);
+        if (specialTeamPoints.Where(c => c.PlayerName == playerName).Count() > 0)
+            return specialTeamPoints.Where(c => c.PlayerName == playerName).Sum(x => x.ENGoals);
+
+        return 0;
+    }
+
+    private int GetPlayerENAssists(XmlNode playerGame, List<PlayerSpecialTeamPoints> specialTeamPoints)
+    {
+        var playerName = GetFormattedPlayerName(playerGame);
+        if (specialTeamPoints.Where(c => c.PlayerName == playerName).Count() > 0)
+            return specialTeamPoints.Where(c => c.PlayerName == playerName).Sum(x => x.ENAssists);
+
+        return 0;
+    }
+
     private String ReadPlayerGameNode(System.Xml.XmlNode playerGame, int ordinal)
     {
         String value = playerGame.ChildNodes[ordinal].InnerText;
@@ -354,6 +416,9 @@ public class Loader
 
     private string FormatPlayerName(string playerName)
     {
+        if (String.IsNullOrEmpty(playerName) || playerName == "unassisted")
+            return playerName;
+
         var nameArr = playerName.Split(' ');
         return nameArr[1].Split('(')[0];
     }
@@ -419,4 +484,7 @@ public class PlayerSpecialTeamPoints
     public int SHGoals { get; set; }
     public int SHAssists { get; set; }
     public int GWGoals { get; set; }
+    public int GWAssists { get; set; }
+    public int ENGoals { get; set; }
+    public int ENAssists { get; set; }
 }

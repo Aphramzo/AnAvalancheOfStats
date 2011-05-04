@@ -36,43 +36,43 @@
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:css/f:main.css" caret="2519" fromTop="15" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:PlayerCompare.js" caret="1016" fromTop="21" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompare.aspx" caret="2325" fromTop="10" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:CommonPage.cs" caret="388" fromTop="12" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="854" fromTop="12" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Players.aspx" caret="269" fromTop="4" />
       <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:LoadData.aspx" caret="0" fromTop="0" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="10175" fromTop="12" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:CommonPage.cs" caret="589" fromTop="15" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="11545" fromTop="18" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="3858" fromTop="93" />
     </RecentFiles>
     <RecentEdits>
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="4995" fromTop="14" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="4448" fromTop="21" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="3293" fromTop="25" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompareChart.aspx.cs" caret="3567" fromTop="30" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Splits.aspx" caret="1929" fromTop="28" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Default.aspx" caret="2282" fromTop="29" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="3306" fromTop="21" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Players.aspx" caret="618" fromTop="12" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:css/f:main.css" caret="1143" fromTop="16" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:css/f:main.css" caret="2548" fromTop="17" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="846" fromTop="12" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:PlayerCompare.js" caret="381" fromTop="9" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:js/f:PlayerCompare.js" caret="1016" fromTop="21" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:PlayerCompare.aspx" caret="296" fromTop="4" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="867" fromTop="12" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="458" fromTop="8" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="465" fromTop="8" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="854" fromTop="12" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/f:Players.aspx" caret="269" fromTop="4" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="2632" fromTop="14" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="3806" fromTop="7" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="5108" fromTop="25" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="5074" fromTop="18" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="5324" fromTop="24" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="5682" fromTop="12" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="5930" fromTop="18" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="6180" fromTop="24" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="6401" fromTop="22" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="2879" fromTop="8" />
-      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="10340" fromTop="15" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="13390" fromTop="17" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="13780" fromTop="17" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="14099" fromTop="21" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="14160" fromTop="20" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="14482" fromTop="24" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="16905" fromTop="11" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="3923" fromTop="5" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="4536" fromTop="18" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="7833" fromTop="12" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="4406" fromTop="7" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="981" fromTop="17" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="7602" fromTop="6" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="7402" fromTop="1" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="7782" fromTop="11" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="8107" fromTop="18" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="7123" fromTop="21" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="13532" fromTop="12" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="15319" fromTop="14" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="6046" fromTop="11" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="4999" fromTop="6" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="772" fromTop="12" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="12578" fromTop="25" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="9009" fromTop="10" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="12140" fromTop="7" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:CommonPage.cs" caret="589" fromTop="15" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="11434" fromTop="17" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="11323" fromTop="5" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="12018" fromTop="18" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:App_Code/f:Loader.cs" caret="11545" fromTop="9" />
+      <File id="C5BC557A-E7CD-4D36-A95A-CE029F4ADFE0/d:Master/f:Main.master" caret="3858" fromTop="93" />
     </RecentEdits>
   </RecentFiles>
   <UnitTestRunner>
@@ -85,9 +85,9 @@
     <ItemStatistics item="Default">
       <Item value="private" priority="3" />
       <Item value="string" priority="0" />
-      <Item value="if" priority="14" />
+      <Item value="if" priority="24" />
       <Item value="Request" priority="3" />
-      <Item value="return" priority="6" />
+      <Item value="return" priority="10" />
       <Item value="IFormatProvider" priority="0" />
       <Item value="String" priority="3" />
       <Item value="Response" priority="0" />
@@ -97,9 +97,9 @@
       <Item value="XmlDocument" priority="1" />
       <Item value="xmlDoc" priority="3" />
       <Item value="double" priority="1" />
-      <Item value="new" priority="3" />
+      <Item value="new" priority="4" />
       <Item value="XmlNode" priority="1" />
-      <Item value="var" priority="3" />
+      <Item value="var" priority="21" />
       <Item value="protected" priority="1" />
       <Item value="XmlElement" priority="3" />
       <Item value="xmlNode" priority="0" />
@@ -116,9 +116,9 @@
       <Item value="GetsRecords" priority="0" />
       <Item value="records" priority="5" />
       <Item value="description" priority="1" />
-      <Item value="playerId" priority="0" />
+      <Item value="playerId" priority="1" />
       <Item value="maxGameNumber" priority="1" />
-      <Item value="false" priority="0" />
+      <Item value="false" priority="1" />
       <Item value="player1Id" priority="1" />
       <Item value="player2Name" priority="1" />
       <Item value="sqlCommand" priority="0" />
@@ -126,18 +126,18 @@
       <Item value="player1Name" priority="0" />
       <Item value="mostGames" priority="2" />
       <Item value="modBy" priority="3" />
-      <Item value="String`0" priority="2" />
+      <Item value="String`0" priority="6" />
       <Item value="gamePage" priority="0" />
       <Item value="eventPage" priority="0" />
-      <Item value="foreach" priority="0" />
+      <Item value="foreach" priority="1" />
       <Item value="XmlNode`0" priority="0" />
-      <Item value="in" priority="0" />
+      <Item value="in" priority="1" />
       <Item value="try" priority="0" />
-      <Item value="node" priority="1" />
+      <Item value="node" priority="3" />
       <Item value="class" priority="0" />
-      <Item value="public" priority="3" />
-      <Item value="int" priority="3" />
-      <Item value="else" priority="0" />
+      <Item value="public" priority="4" />
+      <Item value="int" priority="4" />
+      <Item value="else" priority="2" />
       <Item value="HttpListener`0" priority="0" />
       <Item value="PlayerSpecialTeamPoints`0" priority="2" />
       <Item value="List" priority="1" />
@@ -147,11 +147,43 @@
       <Item value="PlayerName" priority="0" />
       <Item value="PPGoals" priority="0" />
       <Item value="PPAssists" priority="1" />
+      <Item value="specialTeamPoints" priority="3" />
+      <Item value="playerGame" priority="2" />
+      <Item value="playerName" priority="8" />
+      <Item value="nameArr" priority="6" />
+      <Item value="ReadPlayerGameNode`0" priority="0" />
+      <Item value="PLAYERNAME" priority="1" />
+      <Item value="char" priority="0" />
+      <Item value="c" priority="1" />
+      <Item value="x" priority="0" />
+      <Item value="ServicePoint`0" priority="0" />
+      <Item value="avGoals" priority="3" />
+      <Item value="otherGoals" priority="3" />
+      <Item value="nodes" priority="5" />
+      <Item value="parentNode" priority="0" />
+      <Item value="IDataAdapter`0" priority="0" />
+      <Item value="for" priority="0" />
+      <Item value="i" priority="3" />
+      <Item value="break" priority="2" />
+      <Item value="GWGoals" priority="0" />
+      <Item value="p" priority="1" />
+      <Item value="scripts" priority="1" />
+      <Item value="SqlCommand`0" priority="0" />
+      <Item value="command" priority="0" />
+      <Item value="results" priority="0" />
+      <Item value="connection" priority="1" />
+      <Item value="true" priority="0" />
+      <Item value="Console`0" priority="0" />
+      <Item value="GetPageHTML`0" priority="2" />
+      <Item value="HTML" priority="4" />
+      <Item value="indexOf" priority="0" />
+      <Item value="tmpID" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.String">
       <Item value="IsNullOrEmpty" priority="4" />
       <Item value="Empty" priority="0" />
       <Item value="Format" priority="0" />
+      <Item value="Format`0" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Web.HttpResponse">
       <Item value="Write" priority="0" />
@@ -182,21 +214,56 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Data.SqlClient.SqlDataReader">
       <Item value="Read" priority="0" />
+      <Item value="HasRows" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.String">
       <Item value="ToString" priority="0" />
-      <Item value="Replace`0" priority="0" />
-      <Item value="Trim`0" priority="1" />
+      <Item value="Replace`0" priority="3" />
+      <Item value="Trim`0" priority="7" />
+      <Item value="Split`0" priority="5" />
+      <Item value="PadLeft`0" priority="0" />
+      <Item value="Substring`0" priority="3" />
+      <Item value="Length" priority="0" />
+      <Item value="Contains`0" priority="0" />
+      <Item value="IndexOf`0" priority="0" />
+      <Item value="ToUpper`0" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.DateTime">
       <Item value="ToShortDateString" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Xml.XmlNode">
-      <Item value="ChildNodes" priority="1" />
-      <Item value="InnerText" priority="1" />
+      <Item value="ChildNodes" priority="8" />
+      <Item value="InnerText" priority="5" />
+      <Item value="SelectNodes`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
       <Item value="Add`0" priority="0" />
+      <Item value="Where`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:PlayerSpecialTeamPoints">
+      <Item value="PlayerName" priority="1" />
+      <Item value="PPGoals" priority="0" />
+      <Item value="SHAssists" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="Sum`1" priority="0" />
+      <Item value="Count`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlNodeList">
+      <Item value="Count" priority="1" />
+      <Item value="Item`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:CommonPage">
+      <Item value="GetConnection`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlCommand">
+      <Item value="ExecuteReader`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlConnection">
+      <Item value="Close`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
   <UnitTestRunnerNUnit>
