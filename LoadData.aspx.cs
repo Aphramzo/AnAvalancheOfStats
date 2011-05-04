@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class LoadData : System.Web.UI.Page
 {
@@ -25,4 +21,6 @@ public partial class LoadData : System.Web.UI.Page
             loader.LoadPlayerGame(String.Format("http://www.nhl.com/scores/htmlreports/{0}/ES02{1}.HTM", Request["season"], gameNumber));
         }
     }
+
+
 }
