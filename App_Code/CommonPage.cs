@@ -41,4 +41,9 @@ public class CommonPage
     {
         return date.ToString("s").Replace('T', ' ');
     }
+
+    public String CleanUglyHTMLString(String someString)
+    {
+        return someString.Replace("\t", "").Replace("\n", "").Replace("&nbsp;", "").Trim();
+    }
 }

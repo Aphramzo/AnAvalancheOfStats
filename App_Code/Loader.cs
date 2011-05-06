@@ -250,11 +250,11 @@ public class Loader
             return;
 
         //lets make sure that this player exists in our database already
-        //if(!PlayerExistsInDatabase(playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''","'")))
-        //{
-        //    Console.WriteLine("need to load" + playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'"));
-        //    LoadPlayerIntoDatabase(playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'"));
-        //}
+        if (!PlayerExistsInDatabase(playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'")))
+        {
+            Console.WriteLine("need to load" + playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'"));
+            LoadPlayerIntoDatabase(playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'"));
+        }
 
 
         String sqlToExecute = "InsertPlayerGame '{0}', {1}, {2}, {3}, {4}, {5}, '{6}', {7}, '{8}', '{9}', '{10}', {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, '{20}', {21}, {22}, {23}, {24}, {25}, {26}, {27}, {28}";
@@ -302,7 +302,28 @@ public class Loader
         //first we have to load the roster page
         var playerId = GetNHLPlayerIdFromName(playerName);
         var HTML = GetPageHTML(String.Format("http://avalanche.nhl.com/club/player.htm?id={0}", playerId));
+        
+        //since these pages are not well formatted XML, we are going to have to do this the hard way
+        var position = GetHTMLInnerDiv(HTML, "plyrTmbPositionTeam\">");
+        position =  position.Substring(0, position.IndexOf("-"));
 
+
+        //TODO: Convert height to int, get the country from the birthplace
+        var weight = GetHTMLInnerDiv(HTML, "plyrTmbStatCaption\">Weight:</span>");
+        var height = GetHTMLInnerDiv(HTML, "plyrTmbStatCaption\">Height:</span>");
+        var dob = GetHTMLInnerDiv(HTML, "plyrTmbStatCaption\">Born:</span>");
+        dob = dob.Substring(0, dob.IndexOf("(Age"));
+
+        var insertPlayerName = GetHTMLInnerDiv(HTML, "plyrTmbPlayerName\">");
+        var birthplace = GetHTMLInnerDiv(HTML, "plyrTmbStatCaption\">Birthplace:</span>");
+    }
+
+    private String GetHTMLInnerDiv(String HTML, String whatToLookFor)
+    {
+        var returnString = HTML.Substring(HTML.IndexOf(whatToLookFor) + whatToLookFor.Length);
+        returnString = returnString.Substring(0, returnString.IndexOf("</div"));
+        returnString = scripts.CleanUglyHTMLString(returnString);
+        return returnString;
     }
 
     private String GetNHLPlayerIdFromName(string playerName)
@@ -314,7 +335,7 @@ public class Loader
         var indexOf = HTML.IndexOf(playerName + "</A>");
         var tmpID = HTML.Substring(indexOf - 13, 13);
         var id = tmpID.Split('=')[1].Split('"')[0];
-        return "TMP";
+        return id;
     }
 
     private bool PlayerExistsInDatabase(string playerName)
