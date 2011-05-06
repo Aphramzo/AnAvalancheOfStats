@@ -37,6 +37,15 @@ public class CommonPage
         connection.Close();
     }
 
+    public void ExecuteMSSQLNonQuery(string sqlToExecute)
+    {
+        var connection = GetConnection();
+        var command = connection.CreateCommand();
+        command.CommandText = sqlToExecute;
+        command.ExecuteNonQuery();
+        connection.Close();
+    }
+
     public String DateToMySQLDate(DateTime date)
     {
         return date.ToString("s").Replace('T', ' ');
@@ -45,5 +54,11 @@ public class CommonPage
     public String CleanUglyHTMLString(String someString)
     {
         return someString.Replace("\t", "").Replace("\n", "").Replace("&nbsp;", "").Trim();
+    }
+
+    public int ConvertHeightToInches(String heightStr)
+    {
+        var heightArr = heightStr.Split('\'');
+        return Convert.ToInt32(heightArr[0]) * 12 + Convert.ToInt32(heightArr[1].Replace("\"",""));
     }
 }

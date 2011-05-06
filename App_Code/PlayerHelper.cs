@@ -90,4 +90,20 @@ public class PlayerHelper
 
         Scripts.ExecuteMySQLNonQuery(sqlToExecute);
     }
+
+    public void AddPlayerToMSSQL(String name, String positionName, String dob, String countryName, int height, int weight)
+    {
+        var sqlToExecute =
+            String.Format(
+                "InsertPlayer '{0}', '{1}','{2}','{3}',{4},{5}",
+                name.Replace("'","''"),
+                positionName,
+                dob,
+                countryName,
+                height,
+                weight
+                );
+
+        Scripts.ExecuteMSSQLNonQuery(sqlToExecute);
+    }
 }

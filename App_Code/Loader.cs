@@ -308,14 +308,19 @@ public class Loader
         position =  position.Substring(0, position.IndexOf("-"));
 
 
-        //TODO: Convert height to int, get the country from the birthplace
         var weight = GetHTMLInnerDiv(HTML, "plyrTmbStatCaption\">Weight:</span>");
         var height = GetHTMLInnerDiv(HTML, "plyrTmbStatCaption\">Height:</span>");
+        var heightInt = scripts.ConvertHeightToInches(height);
         var dob = GetHTMLInnerDiv(HTML, "plyrTmbStatCaption\">Born:</span>");
         dob = dob.Substring(0, dob.IndexOf("(Age"));
 
         var insertPlayerName = GetHTMLInnerDiv(HTML, "plyrTmbPlayerName\">");
         var birthplace = GetHTMLInnerDiv(HTML, "plyrTmbStatCaption\">Birthplace:</span>");
+        var birthplaceArr = birthplace.Split(',');
+        birthplace = birthplaceArr.Last();
+
+        var helper = new PlayerHelper();
+        helper.AddPlayerToMSSQL(insertPlayerName, position, dob, birthplace, heightInt, Convert.ToInt32(weight));
     }
 
     private String GetHTMLInnerDiv(String HTML, String whatToLookFor)
