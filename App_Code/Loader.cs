@@ -246,14 +246,17 @@ public class Loader
         if (playerGame.ChildNodes[PLAYERNAME].InnerText.Trim() == "TEAM PENALTY")
             return;
 
+        //this is a weird one.  If a player is listed on the game sheet, but they have ZERO TOI
+        if (ReadPlayerGameNode(playerGame, TOI) == "0")
+            return;
+
         //lets make sure that this player exists in our database already
         if (!PlayerExistsInDatabase(playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'").Replace("T.J.","TJ")))
         {
             Console.WriteLine("need to load" + playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'"));
             LoadPlayerIntoDatabase(playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'"));
         }
-
-
+        
         String sqlToExecute = "InsertPlayerGame '{0}', {1}, {2}, {3}, {4}, {5}, '{6}', {7}, '{8}', '{9}', '{10}', {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, '{20}', {21}, {22}, {23}, {24}, {25}, {26}, {27}, {28}";
         sqlToExecute = String.Format(sqlToExecute,
                 ReadPlayerGameNode(playerGame, PLAYERNAME).Replace("T.J.", "TJ"),
@@ -344,7 +347,7 @@ public class Loader
     {
         playerName = scripts.PlayerNameFirstLastFromLastFirst(playerName);
         var connection = scripts.GetConnection();
-        var command = new SqlCommand(String.Format("select * from avDBPlayer where name = '{0}'", playerName.Replace("'","''")), connection);
+        var command = new SqlCommand(String.Format("select dbo.GetavDBPlayerIdByName('{0}')", playerName.Replace("'","''")), connection);
         var results = command.ExecuteReader();
         if(results.HasRows)
         {
@@ -439,7 +442,7 @@ public class Loader
 
     private string FormatPlayerName(string playerName)
     {
-        if (String.IsNullOrEmpty(playerName) || playerName == "unassisted")
+        if (String.IsNullOrEmpty(playerName) || playerName == "unassisted" || playerName.IndexOf(' ') == -1)
             return playerName;
 
         var nameArr = playerName.Split(' ');
