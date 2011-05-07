@@ -61,4 +61,26 @@ public class CommonPage
         var heightArr = heightStr.Split('\'');
         return Convert.ToInt32(heightArr[0]) * 12 + Convert.ToInt32(heightArr[1].Replace("\"",""));
     }
+
+    public String RemoveUnclosedHTMLTag(String HTML, string tagToRemove)
+    {
+        var tmpHTML = HTML;
+        while (tmpHTML.IndexOf("<" + tagToRemove) > 0)
+        {
+            var tmpStr = tmpHTML.Substring(tmpHTML.IndexOf("<"+tagToRemove));
+            tmpHTML = tmpHTML.Remove(tmpHTML.IndexOf("<" + tagToRemove), tmpStr.IndexOf(">")+1);
+        }
+        return tmpHTML;
+    }
+
+    public String RemoveClosedHTMLTag(String HTML, string tagToRemove)
+    {
+        var tmpHTML = HTML;
+        while (tmpHTML.IndexOf("<" + tagToRemove) > 0)
+        {
+            var tmpStr = tmpHTML.Substring(tmpHTML.IndexOf("<" + tagToRemove));
+            tmpHTML = tmpHTML.Remove(tmpHTML.IndexOf("<" + tagToRemove), tmpStr.IndexOf("</" + tagToRemove + ">") + tagToRemove.Length+3);
+        }
+        return tmpHTML;
+    }
 }

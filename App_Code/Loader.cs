@@ -50,8 +50,7 @@ public class Loader
         DateTime gameDate = DateTime.MinValue;
 
         String HTML = GetPageHTML(gamePage);
-        HTML = HTML.Replace("<!--&nbsp;-->", "");
-        HTML = HTML.Replace("&nbsp;", "");
+        
         //lets get it into XML to make it easier to read
         System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
         doc.LoadXml(HTML);
@@ -107,8 +106,6 @@ public class Loader
         var otherGoals = 0;
         String eventPage = gamePage.Replace("ES02", "GS02");
         String HTML = GetPageHTML(eventPage);
-        HTML = HTML.Replace("<!--&nbsp;-->", "");
-        HTML = HTML.Replace("&nbsp;", "");
         //lets get it into XML to make it easier to read
         XmlDocument doc = new XmlDocument();
         doc.LoadXml(HTML);
@@ -250,7 +247,7 @@ public class Loader
             return;
 
         //lets make sure that this player exists in our database already
-        if (!PlayerExistsInDatabase(playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'")))
+        if (!PlayerExistsInDatabase(playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'").Replace("T.J.","TJ")))
         {
             Console.WriteLine("need to load" + playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'"));
             LoadPlayerIntoDatabase(playerGame.ChildNodes[PLAYERNAME].InnerText.Trim().Replace("''", "'"));
@@ -259,7 +256,7 @@ public class Loader
 
         String sqlToExecute = "InsertPlayerGame '{0}', {1}, {2}, {3}, {4}, {5}, '{6}', {7}, '{8}', '{9}', '{10}', {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, '{20}', {21}, {22}, {23}, {24}, {25}, {26}, {27}, {28}";
         sqlToExecute = String.Format(sqlToExecute,
-                ReadPlayerGameNode(playerGame, PLAYERNAME),
+                ReadPlayerGameNode(playerGame, PLAYERNAME).Replace("T.J.", "TJ"),
                 ReadPlayerGameNode(playerGame, GOALS),
                 ReadPlayerGameNode(playerGame, ASSISTS),
                 ReadPlayerGameNode(playerGame, PLUSMINUS),
@@ -457,7 +454,7 @@ public class Loader
         return playerName.Replace("''", "'");
     }
 
-    private static String GetPageHTML(String gamePage)
+    private String GetPageHTML(String gamePage)
     {
         // used to build entire input
         StringBuilder sb = new StringBuilder();
@@ -498,6 +495,17 @@ public class Loader
 
         // print out page source
         String HTML = sb.ToString();
+        HTML = HTML.Replace("<!--&nbsp;-->", "");
+        HTML = HTML.Replace("&nbsp;", "");
+
+        //now lets try to clean this as much as possible for XML formatting.
+        HTML = scripts.RemoveUnclosedHTMLTag(HTML, "META");
+        HTML = scripts.RemoveUnclosedHTMLTag(HTML, "meta");
+        HTML = scripts.RemoveUnclosedHTMLTag(HTML, "!--");
+        HTML = scripts.RemoveClosedHTMLTag(HTML, "script");
+        HTML = scripts.RemoveUnclosedHTMLTag(HTML, "img");
+        HTML = scripts.RemoveUnclosedHTMLTag(HTML, "br");
+
         return HTML;
     }
 }
