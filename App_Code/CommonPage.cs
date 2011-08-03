@@ -6,7 +6,7 @@ public class CommonPage
 {
     public SqlConnection GetConnection()
     {
-        SqlConnection myConn = new SqlConnection("Data Source=localhost;Initial Catalog=AnAvalancheOfStats;user id=sa;password=ehrqbwtr;Transaction Binding=Explicit Unbind;MultipleActiveResultSets=true");
+        SqlConnection myConn = new SqlConnection("Data Source=premsql2e.brinkster.com;Initial Catalog=Aphramzo;user id=aphramzo;password=Ava1anch3;Transaction Binding=Explicit Unbind;MultipleActiveResultSets=true");
         myConn.Open();
         return myConn;
     }
@@ -82,5 +82,27 @@ public class CommonPage
             tmpHTML = tmpHTML.Remove(tmpHTML.IndexOf("<" + tagToRemove), tmpStr.IndexOf("</" + tagToRemove + ">") + tagToRemove.Length+3);
         }
         return tmpHTML;
+    }
+
+    public Boolean ToSafeBoolean(object value)
+    {
+        if(value == null)
+            return false;
+
+        if (value is DBNull)
+            return false;
+
+        return Convert.ToBoolean(value);
+    }
+
+    public Int32 ToSafeInt(object value)
+    {
+        if (value == null)
+            return 0;
+
+        if (value is DBNull)
+            return 0;
+
+        return Convert.ToInt32(value);
     }
 }
