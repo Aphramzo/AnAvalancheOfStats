@@ -10,9 +10,10 @@ public partial class SyncData : System.Web.UI.Page
     {
         Scripts = new CommonPage();
         SyncGameData();
-        
+
     }
 
+    #region Games
     private void SyncGameData()
     {
         var helper = new GameHelper();
@@ -23,38 +24,49 @@ public partial class SyncData : System.Web.UI.Page
             var hisGame = hisGames.Where(c => c.Date == game.Date).FirstOrDefault();
             if (hisGame == null)
             {
-                helper.AddGameToMySQL(game);
-                Response.Write(String.Format("Adding game {0}. {1}", game.Date, "<br />"));
+                AddGame(helper, game);
             }
 
             else if (game.ShotsFor != hisGame.ShotsFor)
             {
-                hisGame.Win = game.Win;
-                hisGame.Loss = game.Loss;
-                hisGame.Tie = game.Tie;
-                hisGame.OverTimeLoss = game.OverTimeLoss;
-                hisGame.OverTimeWin = game.OverTimeWin;
-                hisGame.ShootOutLoss = game.ShootOutLoss;
-                hisGame.ShootOutWin = game.ShootOutWin;
-                hisGame.GoalsAgainst = game.GoalsAgainst;
-                hisGame.GoalsFor = game.GoalsFor;
-                hisGame.ShotsFor = game.ShotsFor;
-                hisGame.ShotsAgainst = game.ShotsAgainst;
-                hisGame.PPG = game.PPG;
-                hisGame.PPOppertunities = game.PPOppertunities;
-                hisGame.PPGA = game.PPGA;
-                hisGame.TimesShortHanded = game.TimesShortHanded;
-                hisGame.ShortHandedGoalsAgainst = game.ShortHandedGoalsAgainst;
-                hisGame.ShortHandedGoalsFor = game.ShortHandedGoalsFor;
-                hisGame.Attendence = game.Attendence;
-                helper.UpdateMySQLGame(hisGame);
-                Response.Write(String.Format("Updating game {0}. {1}", game.Date, "<br />"));
+                UpdateGame(helper, game, hisGame);
             }
         }
-
-
-        
     }
+
+    private void UpdateGame(GameHelper helper, Game game, Game hisGame)
+    {
+        hisGame.Win = game.Win;
+        hisGame.Loss = game.Loss;
+        hisGame.Tie = game.Tie;
+        hisGame.OverTimeLoss = game.OverTimeLoss;
+        hisGame.OverTimeWin = game.OverTimeWin;
+        hisGame.ShootOutLoss = game.ShootOutLoss;
+        hisGame.ShootOutWin = game.ShootOutWin;
+        hisGame.GoalsAgainst = game.GoalsAgainst;
+        hisGame.GoalsFor = game.GoalsFor;
+        hisGame.ShotsFor = game.ShotsFor;
+        hisGame.ShotsAgainst = game.ShotsAgainst;
+        hisGame.PPG = game.PPG;
+        hisGame.PPOppertunities = game.PPOppertunities;
+        hisGame.PPGA = game.PPGA;
+        hisGame.TimesShortHanded = game.TimesShortHanded;
+        hisGame.ShortHandedGoalsAgainst = game.ShortHandedGoalsAgainst;
+        hisGame.ShortHandedGoalsFor = game.ShortHandedGoalsFor;
+        hisGame.Attendence = game.Attendence;
+        helper.UpdateMySQLGame(hisGame);
+        Response.Write(String.Format("Updating game {0}. {1}", game.Date, "<br />"));
+    }
+
+    private void AddGame(GameHelper helper, Game game)
+    {
+        helper.AddGameToMySQL(game);
+        Response.Write(String.Format("Adding game {0}. {1}", game.Date, "<br />"));
+    }
+
+    #endregion
+
+    #region Players
 
     private void SyncPlayerData()
     {
@@ -66,18 +78,28 @@ public partial class SyncData : System.Web.UI.Page
             var hisPlayer = hisPlayers.Where(c => c.Id == player.Id).FirstOrDefault();
             if(hisPlayer == null)
             {
-                helper.AddPlayerToMySQL(player);
-                Response.Write(String.Format("Adding player {0} {1}", player.Name, "<br />"));
+                AddPlayer(helper, player);
             }
             else if(hisPlayer.IsCurrent != player.IsCurrent)
             {
-                hisPlayer.IsCurrent = player.IsCurrent;
-                helper.UpdateMySQLPlayer(hisPlayer);
-
-                Response.Write(String.Format("Updating {0}'s IsCurrent to {1} {2}", player.Name, player.IsCurrent.ToString(), "<br />"));
+                UpdatePlayer(helper, player, hisPlayer);
             }
 
         }
-
     }
+
+    private void UpdatePlayer(PlayerHelper helper, App_Code.Player player, App_Code.Player hisPlayer)
+    {
+        hisPlayer.IsCurrent = player.IsCurrent;
+        helper.UpdateMySQLPlayer(hisPlayer);
+
+        Response.Write(String.Format("Updating {0}'s IsCurrent to {1} {2}", player.Name, player.IsCurrent.ToString(), "<br />"));
+    }
+
+    private void AddPlayer(PlayerHelper helper, App_Code.Player player)
+    {
+        helper.AddPlayerToMySQL(player);
+        Response.Write(String.Format("Adding player {0} {1}", player.Name, "<br />"));
+    }
+    #endregion
 }
