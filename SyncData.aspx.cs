@@ -9,7 +9,15 @@ public partial class SyncData : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Scripts = new CommonPage();
-        SyncGameData();
+        SyncPlayerGameData();
+
+    }
+
+    private void SyncPlayerGameData()
+    {
+        var helper = new PlayerGameHelper();
+        var myPlayerGames = helper.GetPlayerListFromMSSQLBySeasonName("2010-2011");
+        var hisPlayerGames = helper.GetPlayerListFromMySQLBySeasonName("2010-2011");
 
     }
 
