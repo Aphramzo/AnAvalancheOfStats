@@ -13,7 +13,22 @@ public class Game
     public bool PreSeason { get; set; }
     public bool RegularSeason { get; set; }
     public bool PostSeason { get; set; }
-    public DateTime Date { get; set; }
+    private DateTime date { get; set; }
+    public DateTime Date 
+    {
+        get
+        {
+            if (date != DateTime.MinValue)
+                return date;
+
+            LoadFromSource();
+            return date;
+        }
+        set
+        {
+            date = value;
+        }
+    }
     public Int64 OpponentId { get; set; }
     public int LocationId { get; set; }
     public int OppTypeId { get; set; }
@@ -37,8 +52,47 @@ public class Game
     public int ShortHandedGoalsAgainst { get; set; }
     public int Attendence { get; set; }
 
+    public String Source { get; set; }
+
 	public Game()
 	{
 		
 	}
+
+    private void LoadFromSource()
+    {
+        if (Source == "MySQL")
+            LoadFromMySQL();
+
+        if (Source == "MSSQL")
+            LoadFromMSSQL();
+    }
+
+    private void LoadFromMySQL()
+    {
+        var Scripts = new CommonPage();
+        var connection = Scripts.GetavDBConnection();
+        var command = connection.CreateCommand();
+        command.CommandText = String.Format("select * from avDBGames where id = {0}", Id);
+         var Reader = command.ExecuteReader();
+         while (Reader.Read())
+         {
+             Date = Convert.ToDateTime(Reader.GetValue(Reader.GetOrdinal("Date")));
+         }
+         connection.Close();
+    }
+
+    private void LoadFromMSSQL()
+    {
+        var Scripts = new CommonPage();
+        var connection = Scripts.GetConnection();
+        var command = connection.CreateCommand();
+        command.CommandText = String.Format("select * from avDBGames where id = {0}", Id);
+        var Reader = command.ExecuteReader();
+        while (Reader.Read())
+        {
+            Date = Convert.ToDateTime(Reader.GetValue(Reader.GetOrdinal("Date")));
+        }
+        connection.Close();
+    }
 }

@@ -97,7 +97,8 @@ public class GameHelper
                 TimesShortHanded = Scripts.ToSafeInt(Reader.GetValue(24)),
                 ShortHandedGoalsFor = Scripts.ToSafeInt(Reader.GetValue(25)),
                 ShortHandedGoalsAgainst = Scripts.ToSafeInt(Reader.GetValue(26)),
-                Attendence = Scripts.ToSafeInt(Reader.GetValue(27))
+                Attendence = Scripts.ToSafeInt(Reader.GetValue(27)),
+                Source = "MySQL"
             });
         }
         connection.Close();

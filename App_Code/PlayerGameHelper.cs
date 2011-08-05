@@ -26,7 +26,7 @@ public class PlayerGameHelper
             playerGameList.Add(new PlayerGame()
             {
                 Id = Convert.ToInt64(Reader.GetValue(0)),
-                Game = new Game(){Id=Convert.ToInt64(Reader.GetValue(Reader.GetOrdinal("GameId")))},
+                Game = new Game(){Id=Convert.ToInt64(Reader.GetValue(Reader.GetOrdinal("GameId"))), Source = "MSSQL"},
                 Player = new App_Code.Player(){Id=Convert.ToInt64(Reader.GetValue(Reader.GetOrdinal("PlayerId")))},
                 Stats = new Statistics(){
                     Goals = Convert.ToInt32(Reader.GetValue(Reader.GetOrdinal("G"))),
@@ -74,7 +74,7 @@ public class PlayerGameHelper
             playerGameList.Add(new PlayerGame()
             {
                 Id = Convert.ToInt64(Reader.GetValue(0)),
-                Game = new Game() { Id = Convert.ToInt64(Reader.GetValue(Reader.GetOrdinal("GameId"))) },
+                Game = new Game() { Id = Convert.ToInt64(Reader.GetValue(Reader.GetOrdinal("GameId"))), Source = "MySQL" },
                 Player = new App_Code.Player() { Id = Convert.ToInt64(Reader.GetValue(Reader.GetOrdinal("PlayerId"))) },
                 Stats = new Statistics()
                 {

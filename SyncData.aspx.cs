@@ -18,7 +18,14 @@ public partial class SyncData : System.Web.UI.Page
         var helper = new PlayerGameHelper();
         var myPlayerGames = helper.GetPlayerListFromMSSQLBySeasonName("2010-2011");
         var hisPlayerGames = helper.GetPlayerListFromMySQLBySeasonName("2010-2011");
-
+        foreach (var playerGame in myPlayerGames)
+        {
+            var hisPlayerGame = hisPlayerGames.Where(c => c.Game.Date == playerGame.Game.Date && c.Player.Id == playerGame.Player.Id).FirstOrDefault();
+            if (hisPlayerGame == null)
+            {
+                Response.Write(String.Format("Adding player game for {0} on {1}. {2}", playerGame.Player.Name, playerGame.Game.Date, "<br />"));
+            }
+        }
     }
 
     #region Games
