@@ -110,4 +110,43 @@ public class PlayerGameHelper
         connection.Close();
         return playerGameList;
     }
+
+    public void AddPlayerGameToMySQL(PlayerGame playerGame)
+    {
+        var helper = new GameHelper();
+        var hisGame = helper.GetGameFromMySQLByDate(playerGame.Game.Date);
+        var sqlToExecute = String.Format(
+            "insert into avDBSkaterRS (PlayerId, GameId, G, A, PIM,S,PP,SH,GW, TOI, PlusMinus, EVTOI,PPTOI,SHTOI, Hits,BlockedShots, AttemptsBlocked, ShotsMissed,GiveAways,TakeAways,FaceoffsWon,FaceoffsLost,PenaltiesTaken,PPAssists,ShAssists,GWAssists,EN,ENAssists)" +
+            "values ({0},{1}, {2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},{17},{18},{19},{20},{21},{22},{23},{24},{25},{26},{27})",
+                playerGame.Player.Id,
+                hisGame,
+                playerGame.Stats.Goals,
+                playerGame.Stats.Assists,
+                playerGame.Stats.PIM,
+                playerGame.Stats.Shots,
+                playerGame.Stats.PP,
+                playerGame.Stats.SH,
+                playerGame.Stats.GW,
+                playerGame.Stats.TimeOnIce,
+                playerGame.Stats.PlusMinus,
+                playerGame.Stats.ENTimeOnIce,
+                playerGame.Stats.PPTimeOnIce,
+                playerGame.Stats.SHTimeOnIce,
+                playerGame.Stats.Hits,
+                playerGame.Stats.BlockedShots,
+                playerGame.Stats.AttemptsBlocked,
+                playerGame.Stats.ShotsMissed,
+                playerGame.Stats.GiveAways,
+                playerGame.Stats.TakeAways,
+                playerGame.Stats.FaceOffsWon,
+                playerGame.Stats.FaceOffsLost,
+                playerGame.Stats.PenaltiesTaken,
+                playerGame.Stats.PPAssists,
+                playerGame.Stats.SHAssists,
+                playerGame.Stats.GWAssists,
+                playerGame.Stats.EmptyNet,
+                playerGame.Stats.EmptyNetAssits
+            );
+        Scripts.ExecuteMySQLNonQuery(sqlToExecute);
+    }
 }

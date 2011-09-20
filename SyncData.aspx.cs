@@ -23,9 +23,15 @@ public partial class SyncData : System.Web.UI.Page
             var hisPlayerGame = hisPlayerGames.Where(c => c.Game.Date == playerGame.Game.Date && c.Player.Id == playerGame.Player.Id).FirstOrDefault();
             if (hisPlayerGame == null)
             {
-                Response.Write(String.Format("Adding player game for {0} on {1}. {2}", playerGame.Player.Name, playerGame.Game.Date, "<br />"));
+                AddPlayerGame(helper, playerGame);
             }
         }
+    }
+
+    private void AddPlayerGame(PlayerGameHelper helper, PlayerGame playerGame)
+    {
+        helper.AddPlayerGameToMySQL(playerGame);
+        Response.Write(String.Format("Adding player game for {0} on {1}. {2}", playerGame.Player.Id, playerGame.Game.Date, "<br />"));
     }
 
     #region Games

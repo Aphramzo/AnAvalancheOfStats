@@ -148,4 +148,20 @@ public class GameHelper
 
         Scripts.ExecuteMySQLNonQuery(sqlToExecute);
     }
+
+    public Int64 GetGameFromMySQLByDate(DateTime gameDate)
+    {
+        var sqlToExecute = String.Format("select id from avDBGames where date = '{0}'", Scripts.DateToMySQLDate(gameDate));
+        var connection = Scripts.GetavDBConnection();
+        var command = connection.CreateCommand();
+        command.CommandText = sqlToExecute;
+        var Reader = command.ExecuteReader();
+        Int64 id = 0;
+        while (Reader.Read())
+        {
+            id = Convert.ToInt64(Reader.GetValue(Reader.GetOrdinal("Id")));
+        }
+        connection.Close();
+        return id;
+    }
 }
