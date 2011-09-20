@@ -69,9 +69,6 @@
             <li>
                 <a href="../Goalies.aspx" class="headerMenuItem">Goalie Stats</a>
             </li>
-            <li>
-                <a href="../phpBB/" class="headerMenuItem">Boards</a>
-            </li>
         </ul>
     </span>
     <span class="body">
