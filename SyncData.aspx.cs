@@ -9,6 +9,8 @@ public partial class SyncData : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Scripts = new CommonPage();
+        SyncPlayerData();
+        SyncGameData();
         SyncPlayerGameData();
 
     }
@@ -16,8 +18,8 @@ public partial class SyncData : System.Web.UI.Page
     private void SyncPlayerGameData()
     {
         var helper = new PlayerGameHelper();
-        var myPlayerGames = helper.GetPlayerListFromMSSQLBySeasonName("2010-2011");
-        var hisPlayerGames = helper.GetPlayerListFromMySQLBySeasonName("2010-2011");
+        var myPlayerGames = helper.GetPlayerListFromMSSQLBySeasonName("2011-2012");
+        var hisPlayerGames = helper.GetPlayerListFromMySQLBySeasonName("2011-2012");
         foreach (var playerGame in myPlayerGames)
         {
             var hisPlayerGame = hisPlayerGames.Where(c => c.Game.Date == playerGame.Game.Date && c.Player.Id == playerGame.Player.Id).FirstOrDefault();
