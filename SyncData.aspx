@@ -9,7 +9,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+     Password: <input type="password" name="pwd" />
+     <br />
+     <input type="submit" value="Sync Data" />
     </div>
     </form>
 </body>

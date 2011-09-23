@@ -105,4 +105,13 @@ public class CommonPage
 
         return Convert.ToInt32(value);
     }
+
+    public bool GoodPassWord(String pwd)
+    {
+        if (pwd == "#EDCvfrtgb^YHN")
+            return true;
+
+        return false;
+    }
+
 }

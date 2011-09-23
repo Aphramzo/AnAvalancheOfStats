@@ -9,6 +9,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
+        Password: <input type="password" name="pwd" />
+        <br />
         Season: 
         <select name="season">
             <option value="20072008">07-08</option>

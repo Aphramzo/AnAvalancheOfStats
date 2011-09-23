@@ -14,6 +14,12 @@ public partial class LoadData : System.Web.UI.Page
 
     private void LoadGames()
     {
+        if (!scripts.GoodPassWord(Request["pwd"]))
+        {
+            BadPassWordAction();
+            return;
+        }
+
         int fromGameNumber = Convert.ToInt32(Request["from"]);
         int toGameNumber = Convert.ToInt32(Request["to"]);
         String gameNumber;
@@ -26,5 +32,9 @@ public partial class LoadData : System.Web.UI.Page
         scripts.ExecuteMSSQLNonQuery("RegenavDBPlayerSeasonTable");
     }
 
+    private void BadPassWordAction()
+    {
+        Response.Write("Wrong password, sorry");
+    }
 
 }

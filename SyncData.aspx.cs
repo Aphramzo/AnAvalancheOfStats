@@ -8,12 +8,21 @@ public partial class SyncData : System.Web.UI.Page
     protected CommonPage Scripts;
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (!IsPostBack)
+            return;
         Scripts = new CommonPage();
+        if(!Scripts.GoodPassWord(Request["pwd"]))
+        {
+            Response.Write("Wrong password, sorry");    
+            return;
+        }
         SyncPlayerData();
         SyncGameData();
         SyncPlayerGameData();
 
     }
+
+    #region PlayerGames
 
     private void SyncPlayerGameData()
     {
@@ -35,6 +44,7 @@ public partial class SyncData : System.Web.UI.Page
         helper.AddPlayerGameToMySQL(playerGame);
         Response.Write(String.Format("Adding player game for {0} on {1}. {2}", playerGame.Player.Id, playerGame.Game.Date, "<br />"));
     }
+    #endregion
 
     #region Games
     private void SyncGameData()
