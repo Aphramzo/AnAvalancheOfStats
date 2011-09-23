@@ -22,6 +22,17 @@ public class CommonPage
         return connection;
     }
 
+    public MySqlConnection GetAnAvalancheOfStatsMySQLConnection()
+    {
+        string MyConString = "SERVER=MySQL8.brinkster.com;" +
+                "DATABASE=aphramzo;" +
+                "UID=aphramzo;" +
+                "PASSWORD=whyme111;";
+        MySqlConnection connection = new MySqlConnection(MyConString);
+        connection.Open();
+        return connection;
+    }
+
     public string PlayerNameFirstLastFromLastFirst(string playerName)
     {
         var nameArr = playerName.Split(',');
