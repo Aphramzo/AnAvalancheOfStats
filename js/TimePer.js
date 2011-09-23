@@ -26,11 +26,11 @@
                     null,
                     { "sType": "numeric" },
                     { "sType": "numeric" },
-                    { "sType": "numeric-time" },
-                    { "sType": "numeric-time" },
-                    { "sType": "numeric-time" },
-                    { "sType": "numeric-time" },
-                    { "sType": "numeric-time" }
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
                 ]
         });
     else{
@@ -50,11 +50,11 @@
                     { "sType": "html" },
                     null,
                     { "sType": "numeric" },
-                    { "sType": "numeric-time" },
-                    { "sType": "numeric-time" },
-                    { "sType": "numeric-time" },
-                    { "sType": "numeric-time" },
-                    { "sType": "numeric-time" }
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
                 ]
         });
     }
