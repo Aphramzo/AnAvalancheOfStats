@@ -13,7 +13,7 @@ public partial class SyncData : System.Web.UI.Page
         Scripts = new CommonPage();
         if(!Scripts.GoodPassWord(Request["pwd"]))
         {
-            Response.Write("Wrong password, sorry");    
+            WrongPassword.Visible = true;
             return;
         }
         SyncPlayerData();

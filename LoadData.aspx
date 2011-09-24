@@ -1,12 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="LoadData.aspx.cs" Inherits="LoadData" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
+﻿<%@ Page MasterPageFile="~/Master/Main.master" Language="C#" AutoEventWireup="true" CodeFile="LoadData.aspx.cs" Inherits="LoadData" %>
+<asp:Content ContentPlaceHolderID="mainBody" runat="server">
+    <asp:Label ID="WrongPassword" Visible="false" runat="server">
+        <div style="padding: 0 .7em;" class="ui-state-error ui-corner-all">
+            <p><span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span> 
+					Sorry, but that is the wrong password.
+        </div>
+    </asp:Label>
     <form id="form1" runat="server">
     <div>
         Password: <input type="password" name="pwd" />
@@ -25,5 +24,4 @@
         <input type="submit" value="Load Games" />
     </div>
     </form>
-</body>
-</html>
+</asp:Content>

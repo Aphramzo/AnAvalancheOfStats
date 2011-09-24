@@ -34,7 +34,7 @@ public partial class LoadData : System.Web.UI.Page
 
     private void BadPassWordAction()
     {
-        Response.Write("Wrong password, sorry");
+        WrongPassword.Visible = true;
     }
 
 }
