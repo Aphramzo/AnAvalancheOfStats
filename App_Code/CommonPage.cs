@@ -13,15 +13,8 @@ public class CommonPage
         return myConn;
     }
 
-    public OdbcConnection GetavDBConnectionSERVER()
+    public OdbcConnection GetavDBConnection()
     {
-        //string MyConString = "SERVER=;" +
-        //        "DATABASE=;" +
-        //        "UID=;" +
-        //        "PASSWORD=;";
-        //MySqlConnection connection = new MySqlConnection(MyConString);
-        //connection.Open();
-        //return connection;
 
         string connStr = "Driver={MySQL ODBC 3.51 Driver};" +
         "Server=box294.bluehost.com;" +
@@ -34,6 +27,17 @@ public class CommonPage
         return conn;
     }
 
+    public MySqlConnection GetavDBConnectionLOCAL()
+    {
+        string MyConString = "SERVER=box294.bluehost.com;" +
+                "DATABASE=avaland2_stats;" +
+                "UID=avaland2_db;" +
+                "PASSWORD=drury1837;";
+        MySqlConnection connection = new MySqlConnection(MyConString);
+        connection.Open();
+        return connection;
+    }
+
     public MySqlConnection GetAnAvalancheOfStatsMySQLConnection()
     {
         string MyConString = "SERVER=MySQL8.brinkster.com;" +
@@ -43,17 +47,7 @@ public class CommonPage
         MySqlConnection connection = new MySqlConnection(MyConString);
         connection.Open();
         return connection;
-    }
-
-    public MySqlConnection GetavDBConnection(){
-        string MyConString = "SERVER=box294.bluehost.com;" +
-                "DATABASE=avaland2_stats;" +
-                "UID=avaland2_db;" +
-                "PASSWORD=drury1837;";
-        MySqlConnection connection = new MySqlConnection(MyConString);
-        connection.Open();
-        return connection;
-    }
+    }    
 
 
     public string PlayerNameFirstLastFromLastFirst(string playerName)
@@ -150,22 +144,5 @@ public class CommonPage
         return false;
     }
     #endregion
-
-    public void HerpADerp()
-    {
-
-     
-    
-         //OdbcCommand cmd = new OdbcCommand(qry, conn);
-    
-         //dgrAllNames.DataSource = cmd.ExecuteReader(
-         //   CommandBehavior.CloseConnection |
-         //   CommandBehavior.SingleResult);
-         //dgrAllNames.DataBind();
-    
-         //conn.Close();
-         //conn = null;
-         //cmd = null;
-    }
     
 }

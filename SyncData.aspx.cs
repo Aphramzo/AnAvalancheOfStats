@@ -19,8 +19,19 @@ public partial class SyncData : System.Web.UI.Page
         SyncPlayerData();
         SyncGameData();
         SyncPlayerGameData();
+        RegenTables();
 
     }
+
+    #region Regeners
+    private void RegenTables(){
+        var sql = "truncate table avDBPlayerSeason";
+        Scripts.ExecuteMySQLNonQuery(sql);
+        sql = "insert into avDBPlayerSeason select * from avDBvPlayerSeason";
+        Scripts.ExecuteMySQLNonQuery(sql);
+
+    }
+    #endregion
 
     #region PlayerGames
 
