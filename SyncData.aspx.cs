@@ -16,11 +16,13 @@ public partial class SyncData : System.Web.UI.Page
             WrongPassword.Visible = true;
             return;
         }
+        InfoLabel.Text = "<div style=\"padding: 0 .7em;\" class=\"ui-state-highlight ui-corner-all\"><p><span style=\"float: left; margin-right: .3em;\" class=\"ui-icon ui-icon-warning\"></span>";
         SyncPlayerData();
         SyncGameData();
         SyncPlayerGameData();
         RegenTables();
-
+        InfoLabel.Text += "</div>";
+        InfoLabel.Visible = true;
     }
 
     #region Regeners
@@ -53,7 +55,7 @@ public partial class SyncData : System.Web.UI.Page
     private void AddPlayerGame(PlayerGameHelper helper, PlayerGame playerGame)
     {
         helper.AddPlayerGameToMySQL(playerGame);
-        Response.Write(String.Format("Adding player game for {0} on {1}. {2}", playerGame.Player.Id, playerGame.Game.Date, "<br />"));
+        InfoLabel.Text += String.Format("Adding player game for {0} on {1}. {2}", playerGame.Player.Id, playerGame.Game.Date, "<br />");
     }
     #endregion
 
@@ -99,13 +101,13 @@ public partial class SyncData : System.Web.UI.Page
         hisGame.ShortHandedGoalsFor = game.ShortHandedGoalsFor;
         hisGame.Attendence = game.Attendence;
         helper.UpdateMySQLGame(hisGame);
-        Response.Write(String.Format("Updating game {0}. {1}", game.Date, "<br />"));
+        InfoLabel.Text += String.Format("Updating game {0}. {1}", game.Date, "<br />");
     }
 
     private void AddGame(GameHelper helper, Game game)
     {
         helper.AddGameToMySQL(game);
-        Response.Write(String.Format("Adding game {0}. {1}", game.Date, "<br />"));
+        InfoLabel.Text += String.Format("Adding game {0}. {1}", game.Date, "<br />");
     }
 
     #endregion
@@ -137,13 +139,13 @@ public partial class SyncData : System.Web.UI.Page
         hisPlayer.IsCurrent = player.IsCurrent;
         helper.UpdateMySQLPlayer(hisPlayer);
 
-        Response.Write(String.Format("Updating {0}'s IsCurrent to {1} {2}", player.Name, player.IsCurrent.ToString(), "<br />"));
+        InfoLabel.Text += String.Format("Updating {0}'s IsCurrent to {1} {2}", player.Name, player.IsCurrent.ToString(), "<br />");
     }
 
     private void AddPlayer(PlayerHelper helper, App_Code.Player player)
     {
         helper.AddPlayerToMySQL(player);
-        Response.Write(String.Format("Adding player {0} {1}", player.Name, "<br />"));
+        InfoLabel.Text += String.Format("Adding player {0} {1}", player.Name, "<br />");
     }
     #endregion
 }

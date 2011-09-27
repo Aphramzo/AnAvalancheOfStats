@@ -10,6 +10,9 @@
 					Sorry, but that is the wrong password.
         </div>
     </asp:Label>
+    <asp:Label ID="InfoLabel" Visible="false" runat="server">
+        
+    </asp:Label>
     <form id="form1" runat="server">
     <div>
      Password: <input type="password" name="pwd" />
