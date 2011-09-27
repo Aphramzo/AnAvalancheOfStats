@@ -26,8 +26,8 @@
    
    <div id="tabs">
        <ul>
-		    <li><a href="#regularSeason">Regular Season</a></li>
-		    <li><a href="#postSeason">Playoffs</a></li>
+		    <li><a id="aRegularSeason" href="#regularSeason">Regular Season</a></li>
+		    <li><a id="aPostSeason" href="#postSeason">Playoffs</a></li>
 		    <li><a href="#totals">Totals and Records</a></li>
 	    </ul>
        <div id="regularSeason">

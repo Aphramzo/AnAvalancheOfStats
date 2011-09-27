@@ -42,20 +42,8 @@
         "bSort": false
     });
 
-    $('#showSeasonChart').click(function(event) {
-        event.preventDefault();
-        $('#seasonChart').insertFusionCharts({
-            swfPath: "../charts/",
-            type: "MSLine2D",
-            data: "PlayerChart.aspx?Id=" + $('#playerId').val(),
-            dataFormat: "URIData",
-            width: "700",
-            height: "400"
-        });
-        $('.AccordionNavigation').height($(document).height());
-    });
 
-    $('#showPlayoffChart').click(function(event) {
+    $('#aPostSeason').click(function(event) {
         event.preventDefault();
         $('#playoffChart').insertFusionCharts({
             swfPath: "../charts/",
@@ -67,4 +55,14 @@
         });
         $('.AccordionNavigation').height($(document).height());
     });
+
+    $('#seasonChart').insertFusionCharts({
+        swfPath: "../charts/",
+        type: "MSLine2D",
+        data: "PlayerChart.aspx?Id=" + $('#playerId').val(),
+        dataFormat: "URIData",
+        width: "700",
+        height: "400"
+    });
+    $('.AccordionNavigation').height($(document).height());
 });
