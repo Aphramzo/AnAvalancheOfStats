@@ -24,24 +24,31 @@
     </li>
    </ul>
    
-   <div>
-        Regular Season: <a href="#" id="showSeasonChart">(show chart)</a>
-        <asp:DataGrid ID="dgSeasons" runat="server" CssClass="dataGrid" CellPadding="2">
-        </asp:DataGrid>
+   <div id="tabs">
+       <ul>
+		    <li><a href="#regularSeason">Regular Season</a></li>
+		    <li><a href="#postSeason">Playoffs</a></li>
+		    <li><a href="#totals">Totals and Records</a></li>
+	    </ul>
+       <div id="regularSeason">
+            Regular Season: <a href="#" id="showSeasonChart">(show chart)</a>
+            <asp:DataGrid ID="dgSeasons" runat="server" CssClass="dataGrid" CellPadding="2">
+            </asp:DataGrid>
+            <span id="seasonChart"></span>
+        </div>
+        <div id="postSeason">
+            Playoffs: <a href="#" id="showPlayoffChart">(show chart)</a>
+            <asp:DataGrid ID="dgPlayoffs" runat="server" CssClass="dataGrid" CellPadding="2">
+            </asp:DataGrid>
+            <span id="playoffChart"></span>
+        </div>
+        <div id="totals">
+            Regular Season Totals: 
+            <asp:DataGrid ID="dgSeasonTotals" runat="server" CssClass="dataGrid" CellPadding="2">
+            </asp:DataGrid>
+        </div>
+        
     </div>
-    <div>
-        Regular Season Totals: 
-        <asp:DataGrid ID="dgSeasonTotals" runat="server" CssClass="dataGrid" CellPadding="2">
-        </asp:DataGrid>
-    </div>
-    <span id="seasonChart"></span>
-    <br />
-    <div>
-        Playoffs: <a href="#" id="showPlayoffChart">(show chart)</a>
-        <asp:DataGrid ID="dgPlayoffs" runat="server" CssClass="dataGrid" CellPadding="2">
-        </asp:DataGrid>
-    </div>
-    <span id="playoffChart"></span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="explainingColumn" runat="server">
     <b>Columns:</b>

@@ -359,6 +359,7 @@ public class Loader
         return false;
     }
 
+    #region SpecialTeamHelpers
     private int GetPlayerPPGoals(XmlNode playerGame, List<PlayerSpecialTeamPoints> specialTeamPoints)
     {
         var playerName = GetFormattedPlayerName(playerGame);
@@ -430,6 +431,7 @@ public class Loader
 
         return 0;
     }
+    #endregion
 
     private String ReadPlayerGameNode(System.Xml.XmlNode playerGame, int ordinal)
     {
@@ -510,6 +512,16 @@ public class Loader
         HTML = scripts.RemoveUnclosedHTMLTag(HTML, "br");
 
         return HTML;
+    }
+
+    private void UpdateSeasonTableFromGames(int season)
+    {
+        if (season > 15)
+        {
+            var sqlToExecute = String.Format("avDBRegenSeasonFromGames {0}", season);
+            scripts.ExecuteMSSQLNonQuery(sqlToExecute);
+        }
+
     }
 }
 

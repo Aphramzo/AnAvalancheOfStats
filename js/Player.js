@@ -1,4 +1,7 @@
 ﻿$(document).ready(function() {
+
+    $("#tabs").tabs();
+
     var mytable = $("#ctl00_mainBody_dgSeasons");
     //Add the thead that datagrid omits:
     mytable.prepend(document.createElement('thead'));
