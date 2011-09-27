@@ -31,13 +31,11 @@
 		    <li><a href="#totals">Totals and Records</a></li>
 	    </ul>
        <div id="regularSeason">
-            Regular Season: <a href="#" id="showSeasonChart">(show chart)</a>
             <asp:DataGrid ID="dgSeasons" runat="server" CssClass="dataGrid" CellPadding="2">
             </asp:DataGrid>
             <span id="seasonChart"></span>
         </div>
         <div id="postSeason">
-            Playoffs: <a href="#" id="showPlayoffChart">(show chart)</a>
             <asp:DataGrid ID="dgPlayoffs" runat="server" CssClass="dataGrid" CellPadding="2">
             </asp:DataGrid>
             <span id="playoffChart"></span>
