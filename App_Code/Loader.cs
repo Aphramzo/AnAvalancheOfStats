@@ -351,8 +351,12 @@ public class Loader
         var results = command.ExecuteReader();
         if(results.HasRows)
         {
-            connection.Close();
-            return true;
+            results.Read();
+            if(scripts.ToSafeInt(results.GetValue(0)) != 0){
+                connection.Close();
+                return true;
+            }
+            
         }
 
         connection.Close();
