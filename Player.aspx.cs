@@ -74,6 +74,12 @@ public partial class Player : System.Web.UI.Page
         dgSplitsOpponent.DataSource = gridCommand4.ExecuteReader(CommandBehavior.CloseConnection);
         dgSplitsOpponent.DataBind();
 
+        String sqlString5 = String.Format("select {0} from avDBvPlayerSplitsHomeAway {1}", GenerateSplitHomeAwaySelectColumns(), " where playerId = " + playerId);
+        SqlCommand gridCommand5 = new SqlCommand(sqlString5, scripts.GetConnection());
+
+        dgSplitsHomeAway.DataSource = gridCommand5.ExecuteReader(CommandBehavior.CloseConnection);
+        dgSplitsHomeAway.DataBind();
+
     }
 
     private string GenerateSelectColumns()
@@ -107,6 +113,12 @@ public partial class Player : System.Web.UI.Page
     private string GenerateSplitOpponentSelectColumns()
     {
         return "Team, " +
+            SplitsCommonColumns();
+    }
+
+    private string GenerateSplitHomeAwaySelectColumns()
+    {
+        return "Location, " +
             SplitsCommonColumns();
     }
 

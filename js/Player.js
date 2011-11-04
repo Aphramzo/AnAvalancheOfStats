@@ -67,6 +67,18 @@
         "bInfo": false
     });
 
+    mytable = $("#ctl00_mainBody_dgSplitsHomeAway");
+    //Add the thead that datagrid omits:
+    mytable.prepend(document.createElement('thead'));
+    //Move the first row from tbody to thead:
+    $("#ctl00_mainBody_dgSplitsHomeAway thead").append($("#ctl00_mainBody_dgSplitsHomeAway tbody tr:eq(0)"));
+    $('thead tr td').each(function(i) { $(this).replaceWith("<th>" + $(this).html() + "<\/th>"); });
+
+    $('#ctl00_mainBody_dgSplitsHomeAway').dataTable({
+        "bPaginate": false,
+        "bInfo": false
+    });
+
 
     $('#aPostSeason').click(function(event) {
         event.preventDefault();

@@ -62,6 +62,7 @@
                <ul id="TabsTheSecondUL">
 		            <li><a href="#byMonth">By Month</a></li>
 		            <li><a href="#byOpponent">By Opponent</a></li>
+		            <li><a href="#byHomeAway">Home/Away</a></li>
 	            </ul>
 	            <div id="byMonth">
 	                <asp:DataGrid ID="dgSplitsMonth" runat="server" CssClass="dataGrid" CellPadding="2">
@@ -69,6 +70,10 @@
                 </div>    
                 <div id="byOpponent">
                     <asp:DataGrid ID="dgSplitsOpponent" runat="server" CssClass="dataGrid" CellPadding="2">
+                    </asp:DataGrid>
+                </div>
+                <div id="byHomeAway">
+                    <asp:DataGrid ID="dgSplitsHomeAway" runat="server" CssClass="dataGrid" CellPadding="2">
                     </asp:DataGrid>
                 </div>
             </div>
