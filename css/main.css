@@ -170,6 +170,7 @@ table th
 	width: 15%;
 	display:inline-block;
 	border-right: solid 1px #000066;
+	color: #FFFFFF;
 }
 
 .headerMenuItem
@@ -200,4 +201,9 @@ table th
 td
 {
     white-space: nowrap;
+}
+
+#GlobalPlayerSearch 
+{
+    margin-left:17px;    
 }

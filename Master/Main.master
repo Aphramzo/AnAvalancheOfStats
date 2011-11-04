@@ -73,6 +73,11 @@
                 <a href="../Goalies.aspx" class="headerMenuItem">Goalie Stats</a>
             </li>
         </ul>
+        <span id="GlobalPlayerSearch">
+            Player Search:
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="glbPlayerSearch" />
+        </span>
     </span>
     <span class="body">
         <asp:ContentPlaceHolder id="mainBody" runat="server">
