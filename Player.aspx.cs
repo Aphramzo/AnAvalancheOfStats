@@ -62,6 +62,12 @@ public partial class Player : System.Web.UI.Page
         dgPlayoffs.DataSource = gridCommand1.ExecuteReader(CommandBehavior.CloseConnection);
         dgPlayoffs.DataBind();
 
+        String sqlString3 = String.Format("select {0} from avDBvPlayerSplitsMonth {1}", GenerateSplitMonthsSelectColumns(), " where playerId = " + playerId);
+        SqlCommand gridCommand3 = new SqlCommand(sqlString3, scripts.GetConnection());
+
+        dgSplitsMonth.DataSource = gridCommand3.ExecuteReader(CommandBehavior.CloseConnection);
+        dgSplitsMonth.DataBind();
+
     }
 
     private string GenerateSelectColumns()
@@ -80,6 +86,26 @@ public partial class Player : System.Web.UI.Page
                 "Shots, " +
                 "ATOI, " +
                 "ShiftsPerGame as [Shifts Per Game], " +
+                "GoalsPerGame as [Goals Per Game], " +
+                "PointsPerGame as [Points Per Game], " +
+                "PIMPerGame as [PIM Per Game]";
+    }
+
+    private string GenerateSplitMonthsSelectColumns()
+    {
+        return " SeasonName as Season, " +
+                "Month, " +    
+                "GP, " +
+                "Goals," +
+                "Assists, " +
+                "Points," +
+                "PIM, " +
+                "PlusMinus as [+/-], " +
+                "PP, " +
+                "SH, " +
+                "GW, " +
+                "Shots, " +
+                "ATOI, " +
                 "GoalsPerGame as [Goals Per Game], " +
                 "PointsPerGame as [Points Per Game], " +
                 "PIMPerGame as [PIM Per Game]";

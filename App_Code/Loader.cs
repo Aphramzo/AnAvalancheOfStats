@@ -45,6 +45,13 @@ public class Loader
         scripts = new CommonPage();
     }
 
+    public void LoadGameResults(String resultsPage)
+    {
+        String HTML = GetPageHTML(resultsPage);
+        System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+        doc.LoadXml(HTML);
+    }
+
     public void LoadPlayerGame(String gamePage)
     {
         DateTime gameDate = DateTime.MinValue;
@@ -506,6 +513,7 @@ public class Loader
         String HTML = sb.ToString();
         HTML = HTML.Replace("<!--&nbsp;-->", "");
         HTML = HTML.Replace("&nbsp;", "");
+        HTML = HTML.Replace("&copy;", "");
 
         //now lets try to clean this as much as possible for XML formatting.
         HTML = scripts.RemoveUnclosedHTMLTag(HTML, "META");
@@ -514,7 +522,12 @@ public class Loader
         HTML = scripts.RemoveClosedHTMLTag(HTML, "script");
         HTML = scripts.RemoveUnclosedHTMLTag(HTML, "img");
         HTML = scripts.RemoveUnclosedHTMLTag(HTML, "br");
-
+        HTML = scripts.RemoveUnclosedHTMLTag(HTML, "!DOCTYPE");
+        HTML = scripts.RemoveUnclosedHTMLTag(HTML, "input type=\"hidden\"");
+        HTML = scripts.RemoveUnclosedHTMLTag(HTML, "![endif]");
+        
+        HTML = HTML.Replace("</meta>", "");
+        HTML = HTML.Replace("</img>", "");
         return HTML;
     }
 

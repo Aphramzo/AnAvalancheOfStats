@@ -95,7 +95,7 @@ public class CommonPage
     public String RemoveUnclosedHTMLTag(String HTML, string tagToRemove)
     {
         var tmpHTML = HTML;
-        while (tmpHTML.IndexOf("<" + tagToRemove) > 0)
+        while (tmpHTML.IndexOf("<" + tagToRemove) > -1)
         {
             var tmpStr = tmpHTML.Substring(tmpHTML.IndexOf("<"+tagToRemove));
             tmpHTML = tmpHTML.Remove(tmpHTML.IndexOf("<" + tagToRemove), tmpStr.IndexOf(">")+1);

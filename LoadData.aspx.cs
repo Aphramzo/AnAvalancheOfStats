@@ -20,6 +20,8 @@ public partial class LoadData : System.Web.UI.Page
             return;
         }
 
+       // LoadGamesResults();
+        //return;
         int fromGameNumber = Convert.ToInt32(Request["from"]);
         int toGameNumber = Convert.ToInt32(Request["to"]);
         String gameNumber;
@@ -30,6 +32,11 @@ public partial class LoadData : System.Web.UI.Page
         }
 
         scripts.ExecuteMSSQLNonQuery("RegenavDBPlayerSeasonTable");
+    }
+
+    private void LoadGamesResults()
+    {
+        loader.LoadGameResults(String.Format("http://avalanche.nhl.com/club/gamelog.htm?season={0}&gameType=2", Request["season"]));
     }
 
     private void BadPassWordAction()

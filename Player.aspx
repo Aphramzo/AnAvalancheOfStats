@@ -29,6 +29,7 @@
 		    <li><a id="aRegularSeason" href="#regularSeason">Regular Season</a></li>
 		    <li><a id="aPostSeason" href="#postSeason">Playoffs</a></li>
 		    <li><a href="#totals">Totals and Records</a></li>
+		    <li><a href="#splits">Splits</a></li>
 	    </ul>
        <div id="regularSeason">
             <asp:DataGrid ID="dgSeasons" runat="server" CssClass="dataGrid" CellPadding="2">
@@ -45,7 +46,10 @@
             <asp:DataGrid ID="dgSeasonTotals" runat="server" CssClass="dataGrid" CellPadding="2">
             </asp:DataGrid>
         </div>
-        
+        <div id="splits"> 
+            <asp:DataGrid ID="dgSplitsMonth" runat="server" CssClass="dataGrid" CellPadding="2">
+            </asp:DataGrid>
+        </div>
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="explainingColumn" runat="server">
