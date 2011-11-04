@@ -51,7 +51,6 @@
 
     $('#ctl00_mainBody_dgSplitsMonth').dataTable({
         "bPaginate": false,
-        "bFilter": false,
         "bInfo": false
     });
 
