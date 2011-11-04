@@ -1,6 +1,7 @@
 ﻿$(document).ready(function() {
 
     $("#tabs").tabs();
+    $("#TabsTheSecond").tabs();
 
     var mytable = $("#ctl00_mainBody_dgSeasons");
     //Add the thead that datagrid omits:
@@ -50,6 +51,18 @@
     $('thead tr td').each(function(i) { $(this).replaceWith("<th>" + $(this).html() + "<\/th>"); });
 
     $('#ctl00_mainBody_dgSplitsMonth').dataTable({
+        "bPaginate": false,
+        "bInfo": false
+    });
+
+    mytable = $("#ctl00_mainBody_dgSplitsOpponent");
+    //Add the thead that datagrid omits:
+    mytable.prepend(document.createElement('thead'));
+    //Move the first row from tbody to thead:
+    $("#ctl00_mainBody_dgSplitsOpponent thead").append($("#ctl00_mainBody_dgSplitsOpponent tbody tr:eq(0)"));
+    $('thead tr td').each(function(i) { $(this).replaceWith("<th>" + $(this).html() + "<\/th>"); });
+
+    $('#ctl00_mainBody_dgSplitsOpponent').dataTable({
         "bPaginate": false,
         "bInfo": false
     });

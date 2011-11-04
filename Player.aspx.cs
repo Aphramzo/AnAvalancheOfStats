@@ -68,6 +68,12 @@ public partial class Player : System.Web.UI.Page
         dgSplitsMonth.DataSource = gridCommand3.ExecuteReader(CommandBehavior.CloseConnection);
         dgSplitsMonth.DataBind();
 
+        String sqlString4 = String.Format("select {0} from avDBvPlayerSplitsOpponent {1}", GenerateSplitOpponentSelectColumns(), " where playerId = " + playerId);
+        SqlCommand gridCommand4 = new SqlCommand(sqlString4, scripts.GetConnection());
+
+        dgSplitsOpponent.DataSource = gridCommand4.ExecuteReader(CommandBehavior.CloseConnection);
+        dgSplitsOpponent.DataBind();
+
     }
 
     private string GenerateSelectColumns()
@@ -94,8 +100,19 @@ public partial class Player : System.Web.UI.Page
     private string GenerateSplitMonthsSelectColumns()
     {
         return " SeasonName as Season, " +
-                "Month, " +    
-                "GP, " +
+                "Month, " +
+                SplitsCommonColumns();
+    }
+
+    private string GenerateSplitOpponentSelectColumns()
+    {
+        return "Team, " +
+            SplitsCommonColumns();
+    }
+
+    private string SplitsCommonColumns()
+    {
+        return "GP, " +
                 "Goals," +
                 "Assists, " +
                 "Points," +

@@ -3,6 +3,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title><%=PlayerName()%> - An Avalanche Of Stats</title>
     <script src="js/Player.js" type="text/javascript"></script>
+    <style>
+        #TabsTheSecond, #splits{
+            width:100%;
+            padding:0px;
+            margin:0px;
+        }
+        
+        #TabsTheSecondUL {
+            background: url("images/ui-bg_highlight-soft_25_660000_1x100.png") repeat-x scroll 50% 50% #CCCCCC
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="mainBody" runat="server">
     <input type="hidden" id="playerId" value="<%=Request["Id"] %>" />
@@ -47,8 +58,20 @@
             </asp:DataGrid>
         </div>
         <div id="splits"> 
-            <asp:DataGrid ID="dgSplitsMonth" runat="server" CssClass="dataGrid" CellPadding="2">
-            </asp:DataGrid>
+            <div id="TabsTheSecond">
+               <ul id="TabsTheSecondUL">
+		            <li><a href="#byMonth">By Month</a></li>
+		            <li><a href="#byOpponent">By Opponent</a></li>
+	            </ul>
+	            <div id="byMonth">
+	                <asp:DataGrid ID="dgSplitsMonth" runat="server" CssClass="dataGrid" CellPadding="2">
+                    </asp:DataGrid>
+                </div>    
+                <div id="byOpponent">
+                    <asp:DataGrid ID="dgSplitsOpponent" runat="server" CssClass="dataGrid" CellPadding="2">
+                    </asp:DataGrid>
+                </div>
+            </div>
         </div>
     </div>
 </asp:Content>
