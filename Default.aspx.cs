@@ -17,19 +17,53 @@ public partial class _Default : System.Web.UI.Page
         scripts = new CommonPage();
     }
 
+    public string LazyMansMilestones()
+    {
+        var sqlString = "select * from avDBvGoalMileStones";
+        return LazyMansGenericMilestones(sqlString);
+    }
+
+    public string LazyMansPointMilestones()
+    {
+        var sqlString = "select * from avDBvPointMileStones";
+        return LazyMansGenericMilestones(sqlString);
+    }
+
+    public string LazyMansGPMilestones()
+    {
+        var sqlString = "select * from avDBvGPMileStones";
+        return LazyMansGenericMilestones(sqlString);
+    }
+
+    public string LazyMansGenericMilestones(String sqlString)
+    {
+        var returnStr = "<ul>";
+        SqlCommand command = new SqlCommand(sqlString, scripts.GetConnection());
+        using (SqlDataReader reader = command.ExecuteReader())
+        {
+            while (reader.Read())
+            {
+                returnStr += String.Format("<li>{0}</li>", Convert.ToString(reader[0]));
+
+            }
+        }
+        returnStr += "</ul>";
+        return returnStr;
+    }
+
     public string LazyMansNews(String sqlString)
     {
         SqlCommand sqlCommand = new SqlCommand(sqlString, scripts.GetConnection());
-        string returnStr = String.Empty;
+        string returnStr = "<ul>";
         using (SqlDataReader reader = sqlCommand.ExecuteReader())
         {
             while (reader.Read())
             {
-                returnStr += String.Format("{0} :<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{1}<br />", Convert.ToString(reader[1]), Convert.ToString(reader[0]));
+                returnStr += String.Format("<li>{0}: {1}</li>", Convert.ToString(reader[1]), Convert.ToString(reader[0]));
                 
             }
         }
-        //returnStr += "</ul>";
+        returnStr += "</ul>";
         return returnStr;
     }
     public string LazyMansStatUpdates()
