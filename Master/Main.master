@@ -67,6 +67,9 @@
                     <li>
                         <a href="../PlayerCompare.aspx" class="menuItem">Compare Players</a>
                     </li>
+                    <li>
+                        <a href="../Shooting.aspx" class="menuItem">Shooting %</a>
+                    </li>
                 </ul>
             </li>
             <li>
