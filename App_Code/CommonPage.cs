@@ -13,7 +13,7 @@ public class CommonPage
         return myConn;
     }
 
-    public OdbcConnection GetavDBConnection()
+    public OdbcConnection GetavDBConnectionSERVER()
     {
 
         string connStr = "Driver={MySQL ODBC 3.51 Driver};" +
@@ -27,7 +27,7 @@ public class CommonPage
         return conn;
     }
 
-    public MySqlConnection GetavDBConnectionLOCAL()
+    public MySqlConnection GetavDBConnection()
     {
         string MyConString = "SERVER=box294.bluehost.com;" +
                 "DATABASE=avaland2_stats;" +

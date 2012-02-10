@@ -148,4 +148,28 @@ public partial class SyncData : System.Web.UI.Page
         InfoLabel.Text += String.Format("Adding player {0} {1}", player.Name, "<br />");
     }
     #endregion
+
+    #region GoalieGames
+
+    private void SyncGoalieGameData()
+    {
+        var helper = new GoalieGameHelper();
+        var myPlayerGames = helper.GetGoalieListFromMSSQLBySeasonName("2011-2012");
+        var hisPlayerGames = helper.GetGoalieListFromMySQLBySeasonName("2011-2012");
+        foreach (var playerGame in myPlayerGames)
+        {
+            var hisPlayerGame = hisPlayerGames.Where(c => c.Game.Date == playerGame.Game.Date && c.Player.Id == playerGame.Player.Id).FirstOrDefault();
+            if (hisPlayerGame == null)
+            {
+                AddGoalieGame(helper, playerGame);
+            }
+        }
+    }
+
+    private void AddGoalieGame(GoalieGameHelper helper, GoalieGame playerGame)
+    {
+        helper.AddGoalieGameToMySQL(playerGame);
+        InfoLabel.Text += String.Format("Adding goalie game for {0} on {1}. {2}", playerGame.Player.Id, playerGame.Game.Date, "<br />");
+    }
+    #endregion
 }
